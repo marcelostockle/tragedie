@@ -86,6 +86,10 @@ Observed in the old data (`track-tags.json`: 165 tags across 8 categories;
    if that doesn't lose intended timestamps]**. Do it once, at import/edit time, in a shared
    function. Never at render time.
 
+   **Decided:** keep only `v`; strip every other param. No exceptions in the cleaner. (A
+   very niche case, unofficial single-track albums with no alternative link, may need a
+   per-track override later. Don't design for it now.)
+
 Also worth keeping from the old UX: the `pinned` flag on tracks, `lastUpdated`
 timestamps, and the filter-by-tag and sort-by-dimension ideas.
 
@@ -100,8 +104,9 @@ content/
   tags/<tag-id>/<locale>.md      # prose: name + definition per locale
   facets.json                    # facet registry (+ localized names/definitions)
   dimensions.json                # rating dimensions (+ localized names/definitions)
-  genres.json                    # the closed generic-genre list (or a facet flag)
 ```
+
+Genres are ordinary tags in a `genre` facet. There is no separate genre file.
 
 **Track**
 ```jsonc
@@ -115,7 +120,8 @@ Track metadata (title, artist) is **not translated**. It's data, not copy.
 **Tag** (a *concept*)
 - `id`: stable slug that is unique across the whole vocabulary, and includes the facet when
   the word is ambiguous (`warm.timbre`, `warm.harmony`, `warm.vocal`). The id never changes
-  once tracks reference it.
+  once tracks reference it. **Preliminary:** the exact scheme, and how it maps to URL
+  slugs (§7 uses `warm-timbre`), is still to be worked out.
 - `facet`: exactly one. Facets are *aspects of a song being described* (candidates: genre,
   rhythm, timbre, instrumentation, vocals, harmony, mood/feel, production). **[DECIDE the
   final facet list. This is the highest-leverage design decision, so do it by hand with
@@ -127,8 +133,9 @@ Track metadata (title, artist) is **not translated**. It's data, not copy.
 - `examples`: list of `{trackId, note?, start?, end?}`. A good example is part of the definition.
 - `related`: typed edges (`contrasts`, `often-with`, `broader`, `narrower`, `not-to-be-confused-with`).
   Keep it a simple list per tag. **No conceptual-map visualization.** It was judged too much.
-- `status`: `draft | defined | deprecated`. The site only shows `defined`. Admin shows a
-  "needs a definition" queue.
+- `status`: `draft | defined | deprecated`. **Tentative, not confirmed as needed.** If kept,
+  the site only shows `defined` and admin shows a "needs a definition" queue. Drop it if it
+  doesn't earn its place.
 
 **Validation (build-time, fail the build)**: every referenced tag id exists; every tag has
 a definition in the source locale; no two active tags share facet + name; every example
@@ -156,12 +163,14 @@ track exists; ratings are 1–10 integers on known dimensions; links are in clea
   source locale per field, and the admin shows a "missing translation" queue per locale.
 - Locale-prefixed routes (`/en/…`, `/es/…`), with locale-independent stable ids in URLs for
   tag pages (`/en/tags/warm-timbre`).
-- **[DECIDE] the locale list** and which is the source. This isn't known yet, so don't
-  hardcode two.
+- **Decided:** locales are `en` (source) and `es`. They are encoded in the schema as a
+  `LOCALES` const, with `Locale` derived from it and a `SOURCE_LOCALE` beside it. Adding a
+  locale is a one-line change and the compiler flags everything that needs updating.
 
 ## 8. Proposed stack (recommendation, not gospel)
 
-Monorepo, TypeScript throughout:
+Monorepo, TypeScript throughout, using **npm workspaces** (this machine runs npm; pnpm is
+not required):
 
 ```
 packages/schema   zod schemas + shared helpers (URL cleaning, id rules, validation)
@@ -247,10 +256,17 @@ From `res-mantra/tracks.json`, carry over only:
 
 ## 13. Open decisions, in one place
 
+Settled since the first draft: locales (`en` source, `es`), URL param stripping (keep only
+`v`), npm workspaces, genres as plain tags.
+
+Future note: a Claude skill for brainstorming content-complete tags (definition,
+relations, enriched content) will likely be built and run by separate agents. The tag
+schema is the contract those agents write against, so keep it strict with clear errors.
+
 - Facet list and tag id scheme (§5). **Do this first.**
-- Locale list and source locale (§7).
-- The closed list of generic genres (§3.3). The owner's call.
-- Which tracking params to strip (§4.3).
+- Tag id scheme and its mapping to URL slugs (§5, §7).
+- Whether tag `status` is needed at all (§5).
+- The genre tag set (§3.3). The owner's call; genres are plain tags in a `genre` facet.
 - Rhythm pattern format (§6).
 - Embed vs link-out for YouTube on the public site (§8).
 - Keep PrimeVue in admin (§8).
