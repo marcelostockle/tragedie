@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { DimensionId, TagId, TrackId } from "./ids.js";
-import { canonicalLink, videoIdFromTrackId } from "./url.js";
+import { cleanYoutubeUrl } from "./url.js";
 
 export const Rating = z.number().int().min(1).max(10);
 
@@ -14,16 +14,18 @@ export const Track = z
     tags: z.array(TagId).default([]),
     ratings: z.record(DimensionId, Rating).default({}),
     pinned: z.boolean().default(false),
-    lastUpdated: z.iso.datetime(),
+    /** Absent on a few migrated tracks that never had one. */
+    lastUpdated: z.iso.datetime().optional(),
   })
   .strict()
   .superRefine((t, ctx) => {
-    const vid = videoIdFromTrackId(t.id);
-    if (vid && t.link !== canonicalLink(vid)) {
+    // The id is the stable identity. The link may point at a different video, because
+    // uploads get taken down and re-uploaded. It only has to be in cleaned form.
+    if (t.link !== cleanYoutubeUrl(t.link)) {
       ctx.addIssue({
         code: "custom",
         path: ["link"],
-        message: `link must be the cleaned form ${canonicalLink(vid)}`,
+        message: "link must be the cleaned form https://www.youtube.com/watch?v=<id>",
       });
     }
     if (new Set(t.tags).size !== t.tags.length) {

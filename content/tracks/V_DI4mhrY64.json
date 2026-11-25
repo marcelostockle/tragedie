@@ -1,0 +1,19 @@
+{
+  "id": "yt:V_DI4mhrY64",
+  "title": "My Hero",
+  "artists": [
+    "Foo Fighters"
+  ],
+  "album": "The Colour And The Shape",
+  "link": "https://www.youtube.com/watch?v=V_DI4mhrY64",
+  "tags": [],
+  "ratings": {
+    "bass": 2,
+    "richness": 2,
+    "cadence": 4,
+    "mix": 4,
+    "feeling": 7
+  },
+  "pinned": false,
+  "lastUpdated": "2026-08-21T04:21:35.034Z"
+}

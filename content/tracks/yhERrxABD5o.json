@@ -1,0 +1,19 @@
+{
+  "id": "yt:yhERrxABD5o",
+  "title": "Generator",
+  "artists": [
+    "Foo Fighters"
+  ],
+  "album": "There Is Nothing Left To Lose",
+  "link": "https://www.youtube.com/watch?v=yhERrxABD5o",
+  "tags": [],
+  "ratings": {
+    "cadence": 9,
+    "richness": 4,
+    "bass": 3,
+    "mix": 6,
+    "feeling": 6
+  },
+  "pinned": false,
+  "lastUpdated": "2026-09-29T17:59:02.124Z"
+}

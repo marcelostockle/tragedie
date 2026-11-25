@@ -55,6 +55,10 @@ describe("validateContentDir", () => {
   it("rejects non-cleaned links", () => {
     expect(msgs(fixture({ track: { link: `https://youtu.be/${ID}` } })).join()).toContain("cleaned form");
   });
+  it("allows a link that points at a different video than the id", () => {
+    const link = "https://www.youtube.com/watch?v=Ay4AulRg2tY";
+    expect(validateContentDir(fixture({ track: { link } })).issues).toEqual([]);
+  });
   it("rejects out-of-range ratings", () => {
     expect(msgs(fixture({ track: { ratings: { bass: 11 } } })).length).toBeGreaterThan(0);
   });
