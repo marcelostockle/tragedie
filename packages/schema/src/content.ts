@@ -35,9 +35,31 @@ export function parseProse(text: string): { data: Record<string, string>; body: 
     if (!line.trim()) continue;
     const kv = /^([A-Za-z][\w-]*):\s*(.*)$/.exec(line);
     if (!kv) return null;
-    data[kv[1]!] = kv[2]!.trim().replace(/^(["'])(.*)\1$/, "$2");
+    data[kv[1]!] = unquote(kv[2]!.trim());
   }
   return { data, body: m[2]!.trim() };
+}
+
+/** Values are written as JSON strings (safe for any text); plain values are accepted too. */
+function unquote(v: string): string {
+  if (v.startsWith('"')) {
+    try {
+      const parsed: unknown = JSON.parse(v);
+      if (typeof parsed === "string") return parsed;
+    } catch {
+      /* fall through to plain handling */
+    }
+  }
+  return v.replace(/^(["'])(.*)\1$/, "$2");
+}
+
+/** Serialize prose to the `<locale>.md` format that parseProse reads. */
+export function serializeProse(p: { name: string; definition: string; notes?: string }): string {
+  const notes = (p.notes ?? "").trim();
+  return (
+    `---\nname: ${JSON.stringify(p.name)}\ndefinition: ${JSON.stringify(p.definition)}\n---\n` +
+    (notes ? `${notes}\n` : "")
+  );
 }
 
 function readJson<T>(root: string, rel: string, schema: ZodType<T>, issues: Issue[]): T | undefined {

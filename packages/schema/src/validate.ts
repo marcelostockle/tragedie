@@ -41,8 +41,10 @@ export function checkContent(c: Content): Issue[] {
     } else {
       const key = `${t.file.facet}\u0000${src.name.toLowerCase()}`;
       const clash = names.get(key);
-      if (clash) add(`${f}/${SOURCE_LOCALE}.md`, `name "${src.name}" already used in this facet by ${clash}`);
-      else names.set(key, t.file.id);
+      if (clash) {
+        add(`${f}/${SOURCE_LOCALE}.md`, `name "${src.name}" already used in this facet by ${clash}`);
+        add(`tags/${clash}/${SOURCE_LOCALE}.md`, `name "${src.name}" also used in this facet by ${t.file.id}`);
+      } else names.set(key, t.file.id);
     }
     for (const ex of t.file.examples)
       if (!trackIds.has(ex.trackId)) add(`${f}/tag.json`, `example track not found: ${ex.trackId}`);
