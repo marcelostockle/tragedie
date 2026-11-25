@@ -1,0 +1,11 @@
+{
+  "id": "funk.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "soul.genre"
+    }
+  ]
+}

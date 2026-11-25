@@ -1,0 +1,11 @@
+{
+  "id": "trova.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "singer-songwriter.genre"
+    }
+  ]
+}

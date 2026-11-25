@@ -1,0 +1,11 @@
+{
+  "id": "singer-songwriter.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "folk.genre"
+    }
+  ]
+}

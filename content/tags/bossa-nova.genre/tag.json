@@ -1,0 +1,11 @@
+{
+  "id": "bossa-nova.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}
