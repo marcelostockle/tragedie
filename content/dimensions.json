@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cadence",
+    "name": { "en": "Cadence", "es": "Cadencia" },
+    "definition": { "en": "MOCKUP: placeholder definition.", "es": "MOCKUP: definición provisoria." }
+  },
+  {
+    "id": "richness",
+    "name": { "en": "Richness", "es": "Riqueza" },
+    "definition": { "en": "MOCKUP: placeholder definition.", "es": "MOCKUP: definición provisoria." }
+  },
+  {
+    "id": "bass",
+    "name": { "en": "Bass", "es": "Bajo" },
+    "definition": { "en": "MOCKUP: placeholder definition.", "es": "MOCKUP: definición provisoria." }
+  },
+  {
+    "id": "mix",
+    "name": { "en": "Mix", "es": "Mezcla" },
+    "definition": { "en": "MOCKUP: placeholder definition.", "es": "MOCKUP: definición provisoria." }
+  },
+  {
+    "id": "feeling",
+    "name": { "en": "Feeling", "es": "Sensación" },
+    "definition": { "en": "MOCKUP: placeholder definition.", "es": "MOCKUP: definición provisoria." }
+  }
+]

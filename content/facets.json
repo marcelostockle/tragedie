@@ -1,0 +1,37 @@
+[
+  {
+    "id": "genre",
+    "name": { "en": "Genre", "es": "Género" },
+    "definition": { "en": "MOCKUP: the broad generic genre of a track.", "es": "MOCKUP: el género general de una pista." }
+  },
+  {
+    "id": "rhythm",
+    "name": { "en": "Rhythm", "es": "Ritmo" },
+    "definition": { "en": "MOCKUP: rhythmic feel and patterns, apart from genre.", "es": "MOCKUP: sensación y patrones rítmicos, aparte del género." }
+  },
+  {
+    "id": "timbre",
+    "name": { "en": "Timbre", "es": "Timbre" },
+    "definition": { "en": "MOCKUP: the tonal colour of the sound.", "es": "MOCKUP: el color tonal del sonido." }
+  },
+  {
+    "id": "instrumentation",
+    "name": { "en": "Instrumentation", "es": "Instrumentación" },
+    "definition": { "en": "MOCKUP: which instruments carry the track.", "es": "MOCKUP: qué instrumentos sostienen la pista." }
+  },
+  {
+    "id": "vocals",
+    "name": { "en": "Vocals", "es": "Voces" },
+    "definition": { "en": "MOCKUP: the voice, its delivery and treatment.", "es": "MOCKUP: la voz, su interpretación y tratamiento." }
+  },
+  {
+    "id": "mood",
+    "name": { "en": "Mood", "es": "Ánimo" },
+    "definition": { "en": "MOCKUP: the emotional character a track conveys.", "es": "MOCKUP: el carácter emocional que transmite una pista." }
+  },
+  {
+    "id": "production",
+    "name": { "en": "Production", "es": "Producción" },
+    "definition": { "en": "MOCKUP: how the recording is made and processed.", "es": "MOCKUP: cómo se graba y procesa la pista." }
+  }
+]
