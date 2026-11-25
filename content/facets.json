@@ -35,16 +35,56 @@
     "id": "instrumentation",
     "name": { "en": "Instrumentation", "es": "Instrumentación" },
     "definition": {
-      "en": "Which instruments carry the track and how they are combined, including pitched percussion (vibraphone, marimba, timpani). What is playing, not how it sounds. Unpitched percussion goes in percussion.",
-      "es": "Qué instrumentos sostienen la pista y cómo se combinan, incluida la percusión afinada (vibráfono, marimba, timbales sinfónicos). Lo que suena, no cómo suena. La percusión sin altura definida va en percusión."
+      "en": "How instruments are combined into ensembles (piano trio, string quartet, big band, orchestra), plus any instrument that has no family facet of its own. The sound and technique of instruments with their own facet go there instead.",
+      "es": "Cómo se combinan los instrumentos en conjuntos (trío de piano, cuarteto de cuerdas, big band, orquesta), más cualquier instrumento que no tenga una faceta de familia propia. El sonido y la técnica de los instrumentos con faceta propia van allí."
+    }
+  },
+  {
+    "id": "strings",
+    "name": { "en": "Strings", "es": "Cuerdas" },
+    "definition": {
+      "en": "Plucked and bowed string instruments (guitars, banjo, charango, violin, cello), their sound and how they are played: effects, tones and techniques. Not the bass role, which goes in bass.",
+      "es": "Instrumentos de cuerda pulsada y frotada (guitarras, banjo, charango, violín, violonchelo), su sonido y cómo se tocan: efectos, tonos y técnicas. No el rol de bajo, que va en bajo."
+    }
+  },
+  {
+    "id": "bass",
+    "name": { "en": "Bass", "es": "Bajo" },
+    "definition": {
+      "en": "The bass role, whatever produces it: electric, fretless, upright, synth bass, and its sound, effects and playing style. The role wins over the family, so a bass line belongs here even when played on a string or synth instrument.",
+      "es": "El rol de bajo, sin importar qué lo produzca: eléctrico, fretless, contrabajo, bajo sintetizado, y su sonido, efectos y estilo de ejecución. El rol prevalece sobre la familia, así que una línea de bajo va aquí aunque la toque un instrumento de cuerda o un sintetizador."
+    }
+  },
+  {
+    "id": "winds",
+    "name": { "en": "Winds", "es": "Vientos" },
+    "definition": {
+      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet), their sound and how they are played, including mutes and sizes. Not the bass role, which goes in bass.",
+      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete), su sonido y cómo se tocan, incluidas las sordinas y los tamaños. No el rol de bajo, que va en bajo."
+    }
+  },
+  {
+    "id": "keys",
+    "name": { "en": "Keys", "es": "Teclas" },
+    "definition": {
+      "en": "Keyboard instruments (piano, electric piano, organ, harpsichord, accordion) and pitched percussion (vibraphone, marimba, glockenspiel), their sound and how they are played. Not synthesised sound design, which goes in synth.",
+      "es": "Instrumentos de teclado (piano, piano eléctrico, órgano, clavicémbalo, acordeón) y percusión afinada (vibráfono, marimba, glockenspiel), su sonido y cómo se tocan. No el diseño de sonido sintetizado, que va en sintetizador."
+    }
+  },
+  {
+    "id": "synth",
+    "name": { "en": "Synth", "es": "Sintetizador" },
+    "definition": {
+      "en": "Synthesised and electronic sound design: pads, leads, arpeggios and the character of the synthesis. Not a synth playing the bass role, which goes in bass.",
+      "es": "Diseño de sonido sintetizado y electrónico: pads, leads, arpegios y el carácter de la síntesis. No un sintetizador que cumple el rol de bajo, que va en bajo."
     }
   },
   {
     "id": "timbre",
     "name": { "en": "Timbre", "es": "Timbre" },
     "definition": {
-      "en": "The tonal colour of the sound, of a single part or of the ensemble as a whole, independent of which instrument produces it. Not how the recording was made or processed.",
-      "es": "El color tonal del sonido, de una parte o del conjunto completo, independiente de qué instrumento lo produce. No cómo se grabó o procesó la pista."
+      "en": "The tonal colour of the sound, of a single part or of the ensemble as a whole, independent of which instrument produces it. Adjectives such as warm or bright live here, while named varieties of an instrument go in its own facet. Not how the recording was made or processed.",
+      "es": "El color tonal del sonido, de una parte o del conjunto completo, independiente de qué instrumento lo produce. Adjetivos como cálido o brillante viven aquí, mientras que las variedades con nombre de un instrumento van en su propia faceta. No cómo se grabó o procesó la pista."
     }
   },
   {
