@@ -2,12 +2,16 @@
   "name": "tragedie",
   "private": true,
   "type": "module",
-  "workspaces": ["packages/*", "apps/*"],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "test": "npm test -w @tragedie/schema",
-    "typecheck": "npm run typecheck -w @tragedie/schema",
+    "test": "npm test -w @tragedie/schema -w @tragedie/admin",
+    "typecheck": "npm run typecheck -w @tragedie/schema -w @tragedie/admin",
     "validate": "npm run validate -w @tragedie/schema",
-    "ci": "npm run typecheck && npm test && npm run validate"
+    "ci": "npm run typecheck && npm test && npm run validate",
+    "admin": "npm run dev -w @tragedie/admin"
   },
   "devDependencies": {
     "typescript": "^5.9.0",
