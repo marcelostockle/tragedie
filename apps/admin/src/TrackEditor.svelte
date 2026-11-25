@@ -59,12 +59,12 @@
   <label class="check"><input type="checkbox" bind:checked={draft.pinned} /> Pinned</label>
 
   <fieldset>
-    <legend>Ratings (1–10, blank = unrated)</legend>
+    <legend>Ratings (1–5, blank = unrated)</legend>
     {#each dimensions as d (d.id)}
       <label class="row">
         <span class="dim">{d.name.en}</span>
         <input
-          type="number" min="1" max="10" step="1"
+          type="number" min="1" max="5" step="1"
           value={draft.ratings[d.id] ?? ""}
           oninput={(e) => setRating(d.id, e.currentTarget.value)}
         />

@@ -2,7 +2,9 @@ import { z } from "zod";
 import { DimensionId, TagId, TrackId } from "./ids.js";
 import { cleanYoutubeUrl } from "./url.js";
 
-export const Rating = z.number().int().min(1).max(10);
+/** Ratings are a discrete 1–5 scale. */
+export const RATING_MAX = 5;
+export const Rating = z.number().int().min(1).max(RATING_MAX);
 
 export const Track = z
   .object({

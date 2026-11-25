@@ -75,7 +75,7 @@ Observed in the old data (`track-tags.json`: 165 tags across 8 categories;
      artist. Result is `{id: "yt:<videoId>", title, artists, album, link}`.
    - Track identity = `yt:<videoId>`. Keep it. Merge by id, never duplicate.
    - **Base requirement: everything is TypeScript.** Port the importer; no Python in the new repo.
-2. **Multi-pronged rating.** Five dimensions, each an integer 1–10, stored as
+2. **Multi-pronged rating.** Five dimensions, each an integer 1–5 (migrated from the old 1–10 scale, see §10), stored as
    `ratings: {cadence, richness, bass, mix, feeling}`. Dimension keys are stable ids, and
    renaming a key orphans stored ratings. In the new project dimensions are data
    (id + localized name + localized definition), because the ambiguity lesson applies to
@@ -139,7 +139,7 @@ Track metadata (title, artist) is **not translated**. It's data, not copy.
 
 **Validation (build-time, fail the build)**: every referenced tag id exists; every tag has
 a definition in the source locale; no two active tags share facet + name; every example
-track exists; ratings are 1–10 integers on known dimensions; links are in cleaned form.
+track exists; ratings are 1–5 integers on known dimensions; links are in cleaned form.
 
 ## 6. Rhythm facet and playable examples
 

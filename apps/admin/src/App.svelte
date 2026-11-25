@@ -21,7 +21,7 @@
     let list = data.tracks.filter((t) => {
       if (q && !`${t.title} ${t.artists.join(" ")} ${t.album ?? ""}`.toLowerCase().includes(q)) return false;
       if (show === "untagged") return t.tags.length === 0;
-      if (show === "unrated") return Object.keys(t.ratings).length === 0;
+      if (show === "unrated") return dims.some((d) => t.ratings[d.id] === undefined);
       if (show === "pinned") return t.pinned;
       return true;
     });

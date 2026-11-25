@@ -25,7 +25,7 @@ function fixture(over: { track?: object; tagMd?: string | null; example?: string
       artists: ["A"],
       link: `https://www.youtube.com/watch?v=${ID}`,
       tags: ["warm.timbre"],
-      ratings: { bass: 7 },
+      ratings: { bass: 4 },
       lastUpdated: "2026-11-24T00:00:00Z",
       ...over.track,
     }),
@@ -60,7 +60,7 @@ describe("validateContentDir", () => {
     expect(validateContentDir(fixture({ track: { link } })).issues).toEqual([]);
   });
   it("rejects out-of-range ratings", () => {
-    expect(msgs(fixture({ track: { ratings: { bass: 11 } } })).length).toBeGreaterThan(0);
+    expect(msgs(fixture({ track: { ratings: { bass: 6 } } })).length).toBeGreaterThan(0);
   });
   it("rejects unknown dimensions", () => {
     expect(msgs(fixture({ track: { ratings: { nope: 5 } } })).join()).toContain("unknown dimension");

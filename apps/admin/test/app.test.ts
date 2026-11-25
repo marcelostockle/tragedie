@@ -32,10 +32,10 @@ describe("admin api", () => {
   it("saves a valid edit and stamps lastUpdated", async () => {
     const app = createApp(root);
     const track = (await load(app)).tracks.find((t: any) => t.id === `yt:${ID}`);
-    const res = await put(app, ID, { ...track, ratings: { ...track.ratings, bass: 9 }, pinned: true });
+    const res = await put(app, ID, { ...track, ratings: { ...track.ratings, bass: 5 }, pinned: true });
     expect(res.status).toBe(200);
     const saved = JSON.parse(readFileSync(join(root, `tracks/${ID}.json`), "utf8"));
-    expect(saved.ratings.bass).toBe(9);
+    expect(saved.ratings.bass).toBe(5);
     expect(saved.pinned).toBe(true);
     expect(saved.lastUpdated).not.toBe(track.lastUpdated);
   });
@@ -44,7 +44,7 @@ describe("admin api", () => {
     const app = createApp(root);
     const track = (await load(app)).tracks.find((t: any) => t.id === `yt:${ID}`);
     const before = readFileSync(join(root, `tracks/${ID}.json`), "utf8");
-    const res = await put(app, ID, { ...track, ratings: { bass: 11 } });
+    const res = await put(app, ID, { ...track, ratings: { bass: 6 } });
     expect(res.status).toBe(400);
     expect(readFileSync(join(root, `tracks/${ID}.json`), "utf8")).toBe(before);
   });
