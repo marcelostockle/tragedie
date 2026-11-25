@@ -2,36 +2,73 @@
   {
     "id": "genre",
     "name": { "en": "Genre", "es": "Género" },
-    "definition": { "en": "MOCKUP: the broad generic genre of a track.", "es": "MOCKUP: el género general de una pista." }
+    "definition": {
+      "en": "The broad family a track belongs to. A small closed set: anything narrower is expressed by combining tags from other facets.",
+      "es": "La familia amplia a la que pertenece una pista. Un conjunto pequeño y cerrado: lo más específico se expresa combinando etiquetas de otras facetas."
+    }
   },
   {
     "id": "rhythm",
     "name": { "en": "Rhythm", "es": "Ritmo" },
-    "definition": { "en": "MOCKUP: rhythmic feel and patterns, apart from genre.", "es": "MOCKUP: sensación y patrones rítmicos, aparte del género." }
+    "definition": {
+      "en": "How time is organised: groove, feel, meter and recurring patterns, regardless of genre.",
+      "es": "Cómo se organiza el tiempo: groove, sensación, compás y patrones recurrentes, sin importar el género."
+    }
   },
   {
-    "id": "timbre",
-    "name": { "en": "Timbre", "es": "Timbre" },
-    "definition": { "en": "MOCKUP: the tonal colour of the sound.", "es": "MOCKUP: el color tonal del sonido." }
+    "id": "harmony",
+    "name": { "en": "Harmony", "es": "Armonía" },
+    "definition": {
+      "en": "The chords and tonal language: modality, tension, resolution and harmonic colour. Not the sound of the instruments playing them.",
+      "es": "Los acordes y el lenguaje tonal: modalidad, tensión, resolución y color armónico. No el sonido de los instrumentos que los tocan."
+    }
   },
   {
     "id": "instrumentation",
     "name": { "en": "Instrumentation", "es": "Instrumentación" },
-    "definition": { "en": "MOCKUP: which instruments carry the track.", "es": "MOCKUP: qué instrumentos sostienen la pista." }
+    "definition": {
+      "en": "Which instruments carry the track and how they are combined. What is playing, not how it sounds.",
+      "es": "Qué instrumentos sostienen la pista y cómo se combinan. Lo que suena, no cómo suena."
+    }
+  },
+  {
+    "id": "timbre",
+    "name": { "en": "Timbre", "es": "Timbre" },
+    "definition": {
+      "en": "The tonal colour of the sound, of a single part or of the ensemble as a whole, independent of which instrument produces it. Not how the recording was made or processed.",
+      "es": "El color tonal del sonido, de una parte o del conjunto completo, independiente de qué instrumento lo produce. No cómo se grabó o procesó la pista."
+    }
   },
   {
     "id": "vocals",
     "name": { "en": "Vocals", "es": "Voces" },
-    "definition": { "en": "MOCKUP: the voice, its delivery and treatment.", "es": "MOCKUP: la voz, su interpretación y tratamiento." }
+    "definition": {
+      "en": "The human or synthesised voice: whether there is one, how it is delivered, and its character. Anything about the voice belongs here, including its timbre.",
+      "es": "La voz humana o sintetizada: si la hay, cómo se interpreta y su carácter. Todo lo referente a la voz va aquí, incluido su timbre."
+    }
   },
   {
     "id": "mood",
     "name": { "en": "Mood", "es": "Ánimo" },
-    "definition": { "en": "MOCKUP: the emotional character a track conveys.", "es": "MOCKUP: el carácter emocional que transmite una pista." }
+    "definition": {
+      "en": "The emotional character a track conveys. A descriptor of what it is, not a score of how strongly it moves the listener.",
+      "es": "El carácter emocional que transmite una pista. Un descriptor de lo que es, no una medida de cuánto conmueve al oyente."
+    }
   },
   {
     "id": "production",
     "name": { "en": "Production", "es": "Producción" },
-    "definition": { "en": "MOCKUP: how the recording is made and processed.", "es": "MOCKUP: cómo se graba y procesa la pista." }
+    "definition": {
+      "en": "How the recording is made, mixed and processed: space, effects, dynamics and the sound of the medium. Not the instruments or their inherent tone.",
+      "es": "Cómo se graba, mezcla y procesa la pista: espacio, efectos, dinámica y el sonido del medio. No los instrumentos ni su tono propio."
+    }
+  },
+  {
+    "id": "form",
+    "name": { "en": "Form", "es": "Forma" },
+    "definition": {
+      "en": "How the track is structured over time: sections, repetition, builds and development.",
+      "es": "Cómo se estructura la pista en el tiempo: secciones, repetición, crescendos y desarrollo."
+    }
   }
 ]
