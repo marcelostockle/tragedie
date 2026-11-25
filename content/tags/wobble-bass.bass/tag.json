@@ -1,0 +1,19 @@
+{
+  "id": "wobble-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "synth-bass.bass"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "reese-bass.bass"
+    },
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

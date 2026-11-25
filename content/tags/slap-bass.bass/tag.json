@@ -1,0 +1,15 @@
+{
+  "id": "slap-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "picked-bass.bass"
+    },
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

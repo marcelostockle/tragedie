@@ -51,16 +51,16 @@
     "id": "bass",
     "name": { "en": "Bass", "es": "Bajo" },
     "definition": {
-      "en": "The bass role, whatever produces it: electric, fretless, upright, synth bass, and its sound, effects and playing style. The role wins over the family, so a bass line belongs here even when played on a string or synth instrument.",
-      "es": "El rol de bajo, sin importar qué lo produzca: eléctrico, fretless, contrabajo, bajo sintetizado, y su sonido, efectos y estilo de ejecución. El rol prevalece sobre la familia, así que una línea de bajo va aquí aunque la toque un instrumento de cuerda o un sintetizador."
+      "en": "The bass role, whatever produces it: electric, fretless, upright, synth bass, and its sound, effects and playing style. The role wins over the family, so a bass line belongs here even when played on a string or synth instrument. The exception is winds: a tuba or baritone saxophone stays in winds.",
+      "es": "El rol de bajo, sin importar qué lo produzca: eléctrico, fretless, contrabajo, bajo sintetizado, y su sonido, efectos y estilo de ejecución. El rol prevalece sobre la familia, así que una línea de bajo va aquí aunque la toque un instrumento de cuerda o un sintetizador. La excepción son los vientos: una tuba o un saxofón barítono se quedan en vientos."
     }
   },
   {
     "id": "winds",
     "name": { "en": "Winds", "es": "Vientos" },
     "definition": {
-      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet), their sound and how they are played, including mutes and sizes. Not the bass role, which goes in bass.",
-      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete), su sonido y cómo se tocan, incluidas las sordinas y los tamaños. No el rol de bajo, que va en bajo."
+      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet, tuba), their sound and how they are played, including mutes and sizes. Wind instruments stay here even when they play a bass line.",
+      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete, tuba), su sonido y cómo se tocan, incluidas las sordinas y los tamaños. Los instrumentos de viento se quedan aquí aunque toquen una línea de bajo."
     }
   },
   {

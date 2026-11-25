@@ -1,0 +1,15 @@
+{
+  "id": "reese-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "synth-bass.bass"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "wobble-bass.bass"
+    }
+  ]
+}

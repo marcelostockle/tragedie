@@ -1,0 +1,11 @@
+{
+  "id": "sub-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "808.percussion"
+    }
+  ]
+}

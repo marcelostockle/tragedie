@@ -1,0 +1,11 @@
+{
+  "id": "picked-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "slap-bass.bass"
+    }
+  ]
+}
