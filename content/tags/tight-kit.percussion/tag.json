@@ -1,0 +1,11 @@
+{
+  "id": "tight-kit.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "roomy-kit.percussion"
+    }
+  ]
+}

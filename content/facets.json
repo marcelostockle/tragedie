@@ -16,6 +16,14 @@
     }
   },
   {
+    "id": "percussion",
+    "name": { "en": "Percussion", "es": "Percusión" },
+    "definition": {
+      "en": "Everything about unpitched percussion: the drum kit and its sound, hand and auxiliary percussion, and how they are played. Includes the tone of percussion instruments. Not rhythm patterns or pitched percussion.",
+      "es": "Todo lo referente a la percusión sin altura definida: la batería y su sonido, la percusión de mano y auxiliar, y cómo se toca. Incluye el timbre de los instrumentos de percusión. No incluye patrones rítmicos ni percusión afinada."
+    }
+  },
+  {
     "id": "harmony",
     "name": { "en": "Harmony", "es": "Armonía" },
     "definition": {
@@ -27,8 +35,8 @@
     "id": "instrumentation",
     "name": { "en": "Instrumentation", "es": "Instrumentación" },
     "definition": {
-      "en": "Which instruments carry the track and how they are combined. What is playing, not how it sounds.",
-      "es": "Qué instrumentos sostienen la pista y cómo se combinan. Lo que suena, no cómo suena."
+      "en": "Which instruments carry the track and how they are combined, including pitched percussion (vibraphone, marimba, timpani). What is playing, not how it sounds. Unpitched percussion goes in percussion.",
+      "es": "Qué instrumentos sostienen la pista y cómo se combinan, incluida la percusión afinada (vibráfono, marimba, timbales sinfónicos). Lo que suena, no cómo suena. La percusión sin altura definida va en percusión."
     }
   },
   {

@@ -1,0 +1,15 @@
+{
+  "id": "bells.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "cowbell.percussion"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "triangle.percussion"
+    }
+  ]
+}

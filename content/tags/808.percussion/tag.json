@@ -1,0 +1,15 @@
+{
+  "id": "808.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "drum-machine.percussion"
+    },
+    {
+      "type": "often-with",
+      "target": "hip-hop.genre"
+    }
+  ]
+}

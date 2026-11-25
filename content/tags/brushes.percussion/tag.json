@@ -1,0 +1,11 @@
+{
+  "id": "brushes.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

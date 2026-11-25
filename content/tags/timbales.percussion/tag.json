@@ -1,0 +1,11 @@
+{
+  "id": "timbales.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "afro-cuban.genre"
+    }
+  ]
+}

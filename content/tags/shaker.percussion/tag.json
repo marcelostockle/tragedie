@@ -1,0 +1,11 @@
+{
+  "id": "shaker.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "tambourine.percussion"
+    }
+  ]
+}
