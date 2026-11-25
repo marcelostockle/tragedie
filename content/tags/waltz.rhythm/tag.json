@@ -1,0 +1,11 @@
+{
+  "id": "waltz.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "compound-meter.rhythm"
+    }
+  ]
+}

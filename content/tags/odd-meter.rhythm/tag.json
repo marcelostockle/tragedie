@@ -1,0 +1,11 @@
+{
+  "id": "odd-meter.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "changing-meter.rhythm"
+    }
+  ]
+}

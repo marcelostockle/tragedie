@@ -1,0 +1,15 @@
+{
+  "id": "compound-meter.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "waltz.rhythm"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "shuffle.rhythm"
+    }
+  ]
+}
