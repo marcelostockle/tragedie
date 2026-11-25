@@ -1,7 +1,10 @@
 <script lang="ts">
-  import type { Track } from "@tragedie/schema";
+  import type { Track } from "@tragedie/schema/browser";
   import { loadAll, saveTrack, type Loaded } from "./api";
+  import TagsView from "./TagsView.svelte";
   import TrackEditor from "./TrackEditor.svelte";
+
+  let view = $state<"tracks" | "tags">("tracks");
 
   let data = $state<Loaded | null>(null);
   let error = $state("");
@@ -47,6 +50,13 @@
 {:else if !data}
   <p>Loading…</p>
 {:else}
+  <nav>
+    <button class:active={view === "tracks"} onclick={() => (view = "tracks")}>Tracks <small>{data.tracks.length}</small></button>
+    <button class:active={view === "tags"} onclick={() => (view = "tags")}>Tags <small>{data.tags.length}</small></button>
+  </nav>
+  {#if view === "tags"}
+    <TagsView {data} />
+  {:else}
   <div class="layout">
     <aside>
       <div class="controls">
@@ -80,17 +90,21 @@
     <main>
       {#if selected}
         {#key selected.id}
-          <TrackEditor track={selected} dimensions={dims} {onSave} />
+          <TrackEditor track={selected} dimensions={dims} tags={data.tags} facets={data.facets} {onSave} />
         {/key}
       {:else}
         <p class="hint">Select a track.</p>
       {/if}
     </main>
   </div>
+  {/if}
 {/if}
 
 <style>
-  .layout { display: grid; grid-template-columns: 24rem 1fr; height: 100vh; }
+  nav { display: flex; gap: 0.3rem; padding: 0.4rem 0.6rem; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); }
+  nav button { padding: 0.2rem 0.8rem; cursor: pointer; }
+  nav button.active { font-weight: 600; text-decoration: underline; }
+  .layout { display: grid; grid-template-columns: 24rem 1fr; flex: 1; min-height: 0; }
   aside { display: flex; flex-direction: column; border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent); min-height: 0; }
   .controls { display: grid; gap: 0.4rem; padding: 0.6rem; }
   ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
