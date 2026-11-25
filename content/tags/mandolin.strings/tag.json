@@ -1,0 +1,11 @@
+{
+  "id": "mandolin.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "folk.genre"
+    }
+  ]
+}

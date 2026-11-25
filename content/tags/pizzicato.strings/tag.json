@@ -1,0 +1,11 @@
+{
+  "id": "pizzicato.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "bowed-strings.strings"
+    }
+  ]
+}

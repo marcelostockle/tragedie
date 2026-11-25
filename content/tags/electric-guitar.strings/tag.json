@@ -1,0 +1,11 @@
+{
+  "id": "electric-guitar.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "acoustic-guitar.strings"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "slide-guitar.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "blues.genre"
+    }
+  ]
+}

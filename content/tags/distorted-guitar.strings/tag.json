@@ -1,0 +1,15 @@
+{
+  "id": "distorted-guitar.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "rock.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}
