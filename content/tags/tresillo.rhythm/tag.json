@@ -1,0 +1,15 @@
+{
+  "id": "tresillo.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "clave.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "habanera.rhythm"
+    }
+  ]
+}

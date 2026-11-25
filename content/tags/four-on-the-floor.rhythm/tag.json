@@ -1,0 +1,15 @@
+{
+  "id": "four-on-the-floor.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dembow.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

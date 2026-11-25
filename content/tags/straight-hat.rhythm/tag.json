@@ -1,0 +1,15 @@
+{
+  "id": "straight-hat.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "swing.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "dembow.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "four-on-the-floor.rhythm"
+    }
+  ]
+}
