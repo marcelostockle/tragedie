@@ -1,0 +1,23 @@
+{
+  "id": "soft-vocals.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "whisper.vocals"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "falsetto.vocals"
+    },
+    {
+      "type": "contrasts",
+      "target": "belting.vocals"
+    },
+    {
+      "type": "contrasts",
+      "target": "raspy.vocals"
+    }
+  ]
+}

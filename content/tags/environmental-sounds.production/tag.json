@@ -1,0 +1,11 @@
+{
+  "id": "environmental-sounds.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "live-recording.production"
+    }
+  ]
+}
