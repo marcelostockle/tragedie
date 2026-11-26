@@ -2,6 +2,7 @@
   import type { Dimension, Facet, Track } from "@tragedie/schema/browser";
   import type { LoadedTag } from "./api";
   import { tagName, tagTitle } from "./tags";
+  import TagBrowser from "./TagBrowser.svelte";
 
   let {
     track,
@@ -25,6 +26,7 @@
   // svelte-ignore state_referenced_locally
   let artists = $state(track.artists.join("; "));
   let tagQuery = $state("");
+  let browsing = $state(false);
   let message = $state("");
   let saving = $state(false);
 
@@ -122,7 +124,10 @@
       <button type="button" class="chip bad" title="Unknown tag" onclick={() => removeTag(id)}>{id} ×</button>
     {/each}
     {#if draft.tags.length === 0}<span class="hint">No tags.</span>{/if}
-    <input type="search" placeholder="Add a tag…" bind:value={tagQuery} />
+    <div class="row">
+      <input type="search" placeholder="Add a tag…" bind:value={tagQuery} />
+      <button type="button" onclick={() => (browsing = true)}>Browse all…</button>
+    </div>
     {#if tagMatches.length}
       <ul class="matches">
         {#each tagMatches as t (t.file.id)}
@@ -131,6 +136,16 @@
       </ul>
     {/if}
   </fieldset>
+
+  {#if browsing}
+    <TagBrowser
+      {tags}
+      {facets}
+      selected={draft.tags}
+      onToggle={(id) => (draft.tags.includes(id) ? removeTag(id) : addTag(id))}
+      onClose={() => (browsing = false)}
+    />
+  {/if}
 
   <div class="row">
     <button type="submit" disabled={!dirty || saving}>{saving ? "Saving…" : "Save"}</button>
