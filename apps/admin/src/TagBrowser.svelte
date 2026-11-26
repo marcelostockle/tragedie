@@ -23,7 +23,8 @@
   onMount(() => dialog.showModal());
 
   const groups = $derived(
-    facets
+    [...facets]
+      .sort((a, b) => a.name.en.localeCompare(b.name.en))
       .map((f) => ({
         facet: f,
         tags: tags
@@ -42,10 +43,10 @@
     <button type="button" onclick={() => dialog.close()}>Done</button>
   </header>
 
-  <!-- One continuous flow: facet labels and tags are siblings, so nothing breaks the line
-       between facets. -->
+  <!-- Each facet is its own wrapping row group: label first, then its tags. -->
   <div class="flow">
     {#each groups as g (g.facet.id)}
+      <div class="group">
       <span class="facet" title={g.facet.definition.en}>{g.facet.name.en}</span>
       {#each g.tags as t (t.file.id)}
         <button
@@ -57,6 +58,7 @@
           onclick={() => onToggle(t.file.id)}
         >{tagName(t)}</button>
       {/each}
+      </div>
     {/each}
   </div>
 </dialog>
@@ -83,23 +85,40 @@
   header small { flex: 1; opacity: 0.65; }
   .flow {
     display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1;
+  }
+  .group {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.35rem 0.4rem;
-    padding: 1rem;
-    overflow-y: auto;
-    flex: 1;
-    align-content: flex-start;
+    padding: 0.6rem 1rem;
   }
+  .group:nth-child(even) { background: color-mix(in srgb, currentColor 7%, transparent); }
   .facet {
     font-size: 0.8em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     opacity: 0.7;
-    padding: 0 0.2rem 0 0.8rem;
+    padding-right: 0.4rem;
   }
-  .facet:first-child { padding-left: 0; }
-  .chip { border-radius: 1rem; padding: 0.1rem 0.7rem; cursor: pointer; }
-  .chip.on { font-weight: 600; background: color-mix(in srgb, currentColor 22%, transparent); }
+  /* Explicit colours: the default button colours blend into the striped rows. */
+  .chip {
+    border-radius: 1rem;
+    padding: 0.1rem 0.7rem;
+    cursor: pointer;
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid color-mix(in srgb, CanvasText 40%, transparent);
+  }
+  .chip:hover { border-color: CanvasText; }
+  .chip.on {
+    font-weight: 600;
+    color: AccentColorText;
+    background: AccentColor;
+    border-color: AccentColor;
+  }
 </style>
