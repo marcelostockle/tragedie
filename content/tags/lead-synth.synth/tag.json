@@ -1,0 +1,11 @@
+{
+  "id": "lead-synth.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "pad.synth"
+    }
+  ]
+}

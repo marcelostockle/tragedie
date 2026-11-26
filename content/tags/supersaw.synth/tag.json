@@ -1,0 +1,15 @@
+{
+  "id": "supersaw.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "lead-synth.synth"
+    },
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

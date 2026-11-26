@@ -1,0 +1,11 @@
+{
+  "id": "synth-stab.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "horn-stabs.winds"
+    }
+  ]
+}

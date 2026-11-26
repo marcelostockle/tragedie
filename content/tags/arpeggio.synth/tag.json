@@ -1,0 +1,11 @@
+{
+  "id": "arpeggio.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "pluck.synth"
+    }
+  ]
+}
