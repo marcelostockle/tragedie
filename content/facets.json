@@ -19,8 +19,8 @@
     "id": "percussion",
     "name": { "en": "Percussion", "es": "Percusión" },
     "definition": {
-      "en": "Everything about unpitched percussion: the drum kit and its sound, hand and auxiliary percussion, and how they are played. Includes the tone of percussion instruments. Not rhythm patterns or pitched percussion.",
-      "es": "Todo lo referente a la percusión sin altura definida: la batería y su sonido, la percusión de mano y auxiliar, y cómo se toca. Incluye el timbre de los instrumentos de percusión. No incluye patrones rítmicos ni percusión afinada."
+      "en": "Everything about unpitched percussion: the drum kit and its sound, hand and auxiliary percussion, body percussion such as clapping and snapping, and how they are played. Includes the tone of percussion instruments. Not rhythm patterns or pitched percussion.",
+      "es": "Todo lo referente a la percusión sin altura definida: la batería y su sonido, la percusión de mano y auxiliar, la percusión corporal como palmas y chasquidos, y cómo se toca. Incluye el timbre de los instrumentos de percusión. No incluye patrones rítmicos ni percusión afinada."
     }
   },
   {
