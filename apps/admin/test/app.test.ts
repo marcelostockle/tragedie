@@ -1,6 +1,6 @@
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createApp } from "../server/app.js";
 
@@ -8,12 +8,27 @@ const ID = "Pq9syWwgSEA";
 let root: string;
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), "tragedie-admin-"));
-  // A small slice of the real content keeps each test fast.
-  const src = resolve(__dirname, "../../../content");
-  for (const f of ["facets.json", "dimensions.json", `tracks/${ID}.json`, "tracks/W_KmrFrgJh4.json"]) {
-    mkdirSync(dirname(join(root, f)), { recursive: true });
-    cpSync(join(src, f), join(root, f));
-  }
+  // Everything is a test fixture, so editing the real vocabulary or tracks cannot break these.
+  const w = (p: string, v: unknown) => {
+    mkdirSync(dirname(join(root, p)), { recursive: true });
+    writeFileSync(join(root, p), JSON.stringify(v));
+  };
+  const named = (id: string, en: string) => ({ id, name: { en }, definition: { en: `${en}.` } });
+  const track = (id: string, link: string) => ({
+    id: `yt:${id}`,
+    title: `Track ${id}`,
+    artists: ["Artist"],
+    link,
+    tags: [],
+    ratings: { bass: 3, mix: 4 },
+    pinned: false,
+    lastUpdated: "2026-01-01T00:00:00.000Z",
+  });
+  w("facets.json", [named("timbre", "Timbre")]);
+  w("dimensions.json", [named("bass", "Bass"), named("mix", "Mix")]);
+  w(`tracks/${ID}.json`, track(ID, `https://www.youtube.com/watch?v=${ID}`));
+  // A track whose link points at a different (re-uploaded) video than its id.
+  w("tracks/W_KmrFrgJh4.json", track("W_KmrFrgJh4", "https://www.youtube.com/watch?v=Ay4AulRg2tY"));
 });
 afterEach(() => rmSync(root, { recursive: true, force: true }));
 
@@ -31,7 +46,7 @@ describe("admin api", () => {
   it("serves content", async () => {
     const data = await load(createApp(root));
     expect(data.tracks.length).toBe(2);
-    expect(data.dimensions.length).toBe(5);
+    expect(data.dimensions.length).toBe(2);
   });
 
   it("saves a valid edit and stamps lastUpdated", async () => {
