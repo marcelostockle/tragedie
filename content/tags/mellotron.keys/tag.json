@@ -1,0 +1,11 @@
+{
+  "id": "mellotron.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "synth-strings.synth"
+    }
+  ]
+}

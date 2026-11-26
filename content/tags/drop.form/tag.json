@@ -1,0 +1,23 @@
+{
+  "id": "drop.form",
+  "facet": "form",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "breakdown.form"
+    },
+    {
+      "type": "often-with",
+      "target": "slow-buildup.form"
+    },
+    {
+      "type": "often-with",
+      "target": "roll-buildup.form"
+    },
+    {
+      "type": "often-with",
+      "target": "riser-buildup.form"
+    }
+  ]
+}

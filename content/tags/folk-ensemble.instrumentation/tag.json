@@ -1,0 +1,15 @@
+{
+  "id": "folk-ensemble.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "chamber-ensemble.instrumentation"
+    },
+    {
+      "type": "often-with",
+      "target": "folk.genre"
+    }
+  ]
+}

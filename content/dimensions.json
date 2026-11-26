@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cadence",
+    "name": { "en": "Cadence", "es": "Cadencia" },
+    "definition": {
+      "en": "Harmonic flow: how well the harmony moves in and out of rest, building and releasing tension in varied and creative ways.",
+      "es": "Fluidez armónica: qué tan bien la armonía entra y sale del reposo, creando y liberando tensión de maneras variadas y creativas."
+    }
+  },
+  {
+    "id": "richness",
+    "name": { "en": "Richness", "es": "Riqueza" },
+    "definition": {
+      "en": "Harmonic fullness: how much the harmony fills out, such as a full voicing across registers rather than a chord sustained in a single octave.",
+      "es": "Plenitud armónica: cuánto se llena la armonía, por ejemplo una voz plena a lo largo de varios registros en lugar de un acorde sostenido en una sola octava."
+    }
+  },
+  {
+    "id": "bass",
+    "name": { "en": "Bass", "es": "Bajo" },
+    "definition": {
+      "en": "The quality of the bass sound, in both tone and mix. Rates the sound, not the performance.",
+      "es": "La calidad del sonido del bajo, tanto en timbre como en mezcla. Califica el sonido, no la interpretación."
+    }
+  },
+  {
+    "id": "mix",
+    "name": { "en": "Mix", "es": "Mezcla" },
+    "definition": {
+      "en": "How much craft went into the sound beyond letting the band play. A poor recording is a 1, a plain recording is a 2, and higher scores reward increasingly deliberate production and mixing.",
+      "es": "Cuánto oficio se puso en el sonido más allá de dejar tocar a la banda. Una grabación deficiente es un 1, una grabación simple es un 2, y las notas más altas premian una producción y mezcla cada vez más deliberadas."
+    }
+  },
+  {
+    "id": "feeling",
+    "name": { "en": "Feeling", "es": "Sensación" },
+    "definition": {
+      "en": "How evocative the track is: how strongly it stirs something in the listener, whatever the emotion.",
+      "es": "Qué tan evocadora es la pista: cuánto despierta algo en quien escucha, sea cual sea la emoción."
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "power-chords.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "extended-chords.harmony"
+    },
+    {
+      "type": "often-with",
+      "target": "rock.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}

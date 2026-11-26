@@ -1,0 +1,11 @@
+{
+  "id": "french-horn.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}

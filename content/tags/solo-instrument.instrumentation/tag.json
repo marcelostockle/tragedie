@@ -1,0 +1,11 @@
+{
+  "id": "solo-instrument.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "instrumental.vocals"
+    }
+  ]
+}

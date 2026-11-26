@@ -1,0 +1,15 @@
+{
+  "id": "echo.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "reverb-heavy.production"
+    },
+    {
+      "type": "often-with",
+      "target": "reggae.genre"
+    }
+  ]
+}

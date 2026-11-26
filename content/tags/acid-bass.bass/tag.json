@@ -1,0 +1,15 @@
+{
+  "id": "acid-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "synth-bass.bass"
+    },
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

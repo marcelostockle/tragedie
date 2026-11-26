@@ -1,0 +1,11 @@
+{
+  "id": "instrumental.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "a-cappella.vocals"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "gradual-build.form",
+  "facet": "form",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "slow-buildup.form"
+    }
+  ]
+}

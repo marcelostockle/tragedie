@@ -1,0 +1,11 @@
+{
+  "id": "drum-machine.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "loop-based.form",
+  "facet": "form",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "through-composed.form"
+    }
+  ]
+}

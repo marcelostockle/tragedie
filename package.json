@@ -1,0 +1,23 @@
+{
+  "name": "tragedie",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm test -w @tragedie/schema -w @tragedie/admin",
+    "typecheck": "npm run typecheck -w @tragedie/schema -w @tragedie/admin",
+    "validate": "npm run validate -w @tragedie/schema",
+    "vocab": "npm run -s vocab -w @tragedie/schema --",
+    "ci": "npm run typecheck && npm test && npm run validate",
+    "admin": "npm run dev -w @tragedie/admin"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "tsx": "^4.20.0",
+    "vitest": "^3.2.0",
+    "@types/node": "^24.0.0"
+  }
+}

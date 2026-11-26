@@ -1,0 +1,11 @@
+{
+  "id": "energetic.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "relaxed.mood"
+    }
+  ]
+}

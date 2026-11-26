@@ -1,0 +1,11 @@
+{
+  "id": "vocal-chops.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "spoken-word.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "rap.vocals"
+    }
+  ]
+}

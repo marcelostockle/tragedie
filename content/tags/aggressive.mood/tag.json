@@ -1,0 +1,19 @@
+{
+  "id": "aggressive.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "peaceful.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "harsh-vocals.vocals"
+    }
+  ]
+}

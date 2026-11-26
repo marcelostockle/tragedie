@@ -1,0 +1,11 @@
+{
+  "id": "reversed-sound.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "riser-buildup.form"
+    }
+  ]
+}

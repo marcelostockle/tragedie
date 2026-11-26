@@ -1,0 +1,11 @@
+{
+  "id": "bowed-bass.bass",
+  "facet": "bass",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "upright-bass.bass"
+    }
+  ]
+}

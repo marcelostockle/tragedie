@@ -1,0 +1,19 @@
+{
+  "id": "big-band.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "brass-band.instrumentation"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "horn-section.winds"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

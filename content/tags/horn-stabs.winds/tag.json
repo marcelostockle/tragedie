@@ -1,0 +1,15 @@
+{
+  "id": "horn-stabs.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "horn-section.winds"
+    },
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

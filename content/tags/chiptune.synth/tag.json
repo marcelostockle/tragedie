@@ -1,0 +1,11 @@
+{
+  "id": "chiptune.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "arpeggio.synth"
+    }
+  ]
+}

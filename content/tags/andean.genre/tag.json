@@ -1,0 +1,11 @@
+{
+  "id": "andean.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "folk.genre"
+    }
+  ]
+}

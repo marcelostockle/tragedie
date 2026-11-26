@@ -1,0 +1,15 @@
+{
+  "id": "vinyl-crackle.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "lo-fi.production"
+    },
+    {
+      "type": "often-with",
+      "target": "hip-hop.genre"
+    }
+  ]
+}

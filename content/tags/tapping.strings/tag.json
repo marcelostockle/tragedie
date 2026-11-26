@@ -1,0 +1,11 @@
+{
+  "id": "tapping.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "shredding.strings"
+    }
+  ]
+}

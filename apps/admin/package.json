@@ -1,0 +1,26 @@
+{
+  "name": "@tragedie/admin",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,ui -c blue,green \"npm:dev:api\" \"npm:dev:ui\"",
+    "dev:api": "tsx watch server/main.ts",
+    "dev:ui": "vite",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.server.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.0",
+    "@tragedie/schema": "*",
+    "hono": "^4.9.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.1.0",
+    "concurrently": "^9.2.0",
+    "svelte": "^5.38.0",
+    "svelte-check": "^4.3.0",
+    "vite": "^7.1.0"
+  }
+}

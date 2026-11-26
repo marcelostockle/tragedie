@@ -1,0 +1,11 @@
+{
+  "id": "lo-fi.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "vinyl-crackle.production"
+    }
+  ]
+}

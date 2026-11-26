@@ -1,0 +1,11 @@
+{
+  "id": "eerie.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dark.mood"
+    }
+  ]
+}

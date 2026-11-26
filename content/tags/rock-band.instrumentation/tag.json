@@ -1,0 +1,11 @@
+{
+  "id": "rock-band.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "rock.genre"
+    }
+  ]
+}

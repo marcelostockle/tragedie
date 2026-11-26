@@ -1,0 +1,15 @@
+{
+  "id": "scat.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "wordless-vocals.vocals"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "shredding.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "tapping.strings"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}

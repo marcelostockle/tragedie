@@ -1,0 +1,15 @@
+{
+  "id": "rap.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "spoken-word.vocals"
+    },
+    {
+      "type": "often-with",
+      "target": "hip-hop.genre"
+    }
+  ]
+}

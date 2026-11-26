@@ -1,0 +1,11 @@
+{
+  "id": "blast-beat.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}

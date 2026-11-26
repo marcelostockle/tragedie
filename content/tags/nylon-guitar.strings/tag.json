@@ -1,0 +1,11 @@
+{
+  "id": "nylon-guitar.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "acoustic-guitar.strings"
+    }
+  ]
+}

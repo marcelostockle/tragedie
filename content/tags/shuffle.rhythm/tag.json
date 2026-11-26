@@ -1,0 +1,19 @@
+{
+  "id": "shuffle.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "swing.rhythm"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "compound-meter.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "blues.genre"
+    }
+  ]
+}

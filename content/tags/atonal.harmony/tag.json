@@ -1,0 +1,15 @@
+{
+  "id": "atonal.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "chromatic.harmony"
+    },
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}

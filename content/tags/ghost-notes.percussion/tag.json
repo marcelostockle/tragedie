@@ -1,0 +1,11 @@
+{
+  "id": "ghost-notes.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palm-muting.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "distorted-guitar.strings"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}

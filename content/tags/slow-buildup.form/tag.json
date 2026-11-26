@@ -1,0 +1,15 @@
+{
+  "id": "slow-buildup.form",
+  "facet": "form",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "gradual-build.form"
+    },
+    {
+      "type": "often-with",
+      "target": "drop.form"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "genre",
+    "name": { "en": "Genre", "es": "Género" },
+    "definition": {
+      "en": "The broad family a track belongs to. A small closed set: anything narrower is expressed by combining tags from other facets.",
+      "es": "La familia amplia a la que pertenece una pista. Un conjunto pequeño y cerrado: lo más específico se expresa combinando etiquetas de otras facetas."
+    }
+  },
+  {
+    "id": "rhythm",
+    "name": { "en": "Rhythm", "es": "Ritmo" },
+    "definition": {
+      "en": "How time is organised: groove, feel, meter and recurring patterns, regardless of genre.",
+      "es": "Cómo se organiza el tiempo: groove, sensación, compás y patrones recurrentes, sin importar el género."
+    }
+  },
+  {
+    "id": "percussion",
+    "name": { "en": "Percussion", "es": "Percusión" },
+    "definition": {
+      "en": "Everything about unpitched percussion: the drum kit and its sound, hand and auxiliary percussion, body percussion such as clapping and snapping, and how they are played. Includes the tone of percussion instruments. Not rhythm patterns or pitched percussion.",
+      "es": "Todo lo referente a la percusión sin altura definida: la batería y su sonido, la percusión de mano y auxiliar, la percusión corporal como palmas y chasquidos, y cómo se toca. Incluye el timbre de los instrumentos de percusión. No incluye patrones rítmicos ni percusión afinada."
+    }
+  },
+  {
+    "id": "harmony",
+    "name": { "en": "Harmony", "es": "Armonía" },
+    "definition": {
+      "en": "The chords and tonal language: modality, tension, resolution and harmonic colour. Not the sound of the instruments playing them.",
+      "es": "Los acordes y el lenguaje tonal: modalidad, tensión, resolución y color armónico. No el sonido de los instrumentos que los tocan."
+    }
+  },
+  {
+    "id": "instrumentation",
+    "name": { "en": "Instrumentation", "es": "Instrumentación" },
+    "definition": {
+      "en": "How instruments are combined into ensembles (piano trio, string quartet, big band, orchestra). The sound and technique of an individual instrument go in that instrument's own facet instead.",
+      "es": "Cómo se combinan los instrumentos en conjuntos (trío de piano, cuarteto de cuerdas, big band, orquesta). El sonido y la técnica de cada instrumento van en la faceta propia de ese instrumento."
+    }
+  },
+  {
+    "id": "strings",
+    "name": { "en": "Strings", "es": "Cuerdas" },
+    "definition": {
+      "en": "Plucked and bowed string instruments (guitars, banjo, charango, violin, cello), their sound and how they are played: effects, tones and techniques. Not the bass role, which goes in bass.",
+      "es": "Instrumentos de cuerda pulsada y frotada (guitarras, banjo, charango, violín, violonchelo), su sonido y cómo se tocan: efectos, tonos y técnicas. No el rol de bajo, que va en bajo."
+    }
+  },
+  {
+    "id": "bass",
+    "name": { "en": "Bass", "es": "Bajo" },
+    "definition": {
+      "en": "The bass role, whatever produces it: electric, fretless, upright, synth bass, and its sound, effects and playing style. The role wins over the family, so a bass line belongs here even when played on a string or synth instrument. The exception is winds: a tuba or baritone saxophone stays in winds.",
+      "es": "El rol de bajo, sin importar qué lo produzca: eléctrico, fretless, contrabajo, bajo sintetizado, y su sonido, efectos y estilo de ejecución. El rol prevalece sobre la familia, así que una línea de bajo va aquí aunque la toque un instrumento de cuerda o un sintetizador. La excepción son los vientos: una tuba o un saxofón barítono se quedan en vientos."
+    }
+  },
+  {
+    "id": "winds",
+    "name": { "en": "Winds", "es": "Vientos" },
+    "definition": {
+      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet, tuba), their sound and how they are played, including mutes and sizes, plus whistling. Wind instruments stay here even when they play a bass line.",
+      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete, tuba), su sonido y cómo se tocan, incluidas las sordinas y los tamaños, además del silbido. Los instrumentos de viento se quedan aquí aunque toquen una línea de bajo."
+    }
+  },
+  {
+    "id": "keys",
+    "name": { "en": "Keys", "es": "Teclas" },
+    "definition": {
+      "en": "Keyboard instruments (piano, electric piano, organ, harpsichord, accordion) and pitched percussion (vibraphone, marimba, glockenspiel), their sound and how they are played. Not synthesised sound design, which goes in synth.",
+      "es": "Instrumentos de teclado (piano, piano eléctrico, órgano, clavicémbalo, acordeón) y percusión afinada (vibráfono, marimba, glockenspiel), su sonido y cómo se tocan. No el diseño de sonido sintetizado, que va en sintetizador."
+    }
+  },
+  {
+    "id": "synth",
+    "name": { "en": "Synth", "es": "Sintetizador" },
+    "definition": {
+      "en": "Synthesised, sampled and electronic sound design: pads, leads, arpeggios, the character of the synthesis, and instruments that audibly come from samples or soundfonts. Not a synth playing the bass role, which goes in bass.",
+      "es": "Diseño de sonido sintetizado, muestreado y electrónico: pads, leads, arpegios, el carácter de la síntesis e instrumentos que suenan claramente a muestras o soundfonts. No un sintetizador que cumple el rol de bajo, que va en bajo."
+    }
+  },
+  {
+    "id": "vocals",
+    "name": { "en": "Vocals", "es": "Voces" },
+    "definition": {
+      "en": "The human or synthesised voice: whether there is one, how it is delivered, and its character. Anything about the voice belongs here, including its timbre.",
+      "es": "La voz humana o sintetizada: si la hay, cómo se interpreta y su carácter. Todo lo referente a la voz va aquí, incluido su timbre."
+    }
+  },
+  {
+    "id": "mood",
+    "name": { "en": "Mood", "es": "Ánimo" },
+    "definition": {
+      "en": "The emotional character a track conveys. A descriptor of what it is, not a score of how strongly it moves the listener.",
+      "es": "El carácter emocional que transmite una pista. Un descriptor de lo que es, no una medida de cuánto conmueve al oyente."
+    }
+  },
+  {
+    "id": "production",
+    "name": { "en": "Production", "es": "Producción" },
+    "definition": {
+      "en": "How the recording is made, mixed and processed: space, effects, dynamics and the sound of the medium. Not the instruments or their inherent tone.",
+      "es": "Cómo se graba, mezcla y procesa la pista: espacio, efectos, dinámica y el sonido del medio. No los instrumentos ni su tono propio."
+    }
+  },
+  {
+    "id": "form",
+    "name": { "en": "Form", "es": "Forma" },
+    "definition": {
+      "en": "How the track is structured over time: sections, repetition, builds and development.",
+      "es": "Cómo se estructura la pista en el tiempo: secciones, repetición, crescendos y desarrollo."
+    }
+  }
+]

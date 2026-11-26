@@ -1,0 +1,11 @@
+{
+  "id": "cello.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "bowed-strings.strings"
+    }
+  ]
+}

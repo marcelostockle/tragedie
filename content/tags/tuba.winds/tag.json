@@ -1,0 +1,11 @@
+{
+  "id": "tuba.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "oom-pah.rhythm"
+    }
+  ]
+}

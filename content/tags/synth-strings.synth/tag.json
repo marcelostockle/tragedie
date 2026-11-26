@@ -1,0 +1,11 @@
+{
+  "id": "synth-strings.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "string-section.strings"
+    }
+  ]
+}

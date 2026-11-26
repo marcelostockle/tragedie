@@ -1,0 +1,11 @@
+{
+  "id": "wah-guitar.strings",
+  "facet": "strings",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

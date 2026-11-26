@@ -1,0 +1,15 @@
+{
+  "id": "harpsichord.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "piano.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}

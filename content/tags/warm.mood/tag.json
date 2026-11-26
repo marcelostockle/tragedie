@@ -1,0 +1,11 @@
+{
+  "id": "warm.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "dark.mood"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "cross-stick.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "brushes.percussion"
+    },
+    {
+      "type": "often-with",
+      "target": "bossa-nova.genre"
+    }
+  ]
+}

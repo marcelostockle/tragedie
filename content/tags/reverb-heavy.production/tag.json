@@ -1,0 +1,19 @@
+{
+  "id": "reverb-heavy.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "dry.production"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "echo.production"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "roomy-kit.percussion"
+    }
+  ]
+}

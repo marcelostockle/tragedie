@@ -1,0 +1,11 @@
+{
+  "id": "truck-driver-modulation.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "key-change.harmony"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "accordion.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "melodica.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "folk.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "tango.genre"
+    }
+  ]
+}

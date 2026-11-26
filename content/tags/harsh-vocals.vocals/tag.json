@@ -1,0 +1,15 @@
+{
+  "id": "harsh-vocals.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "raspy.vocals"
+    },
+    {
+      "type": "often-with",
+      "target": "metal.genre"
+    }
+  ]
+}

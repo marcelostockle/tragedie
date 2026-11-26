@@ -1,0 +1,11 @@
+{
+  "id": "trumpet.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "trombone.winds"
+    }
+  ]
+}

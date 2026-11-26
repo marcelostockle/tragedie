@@ -1,0 +1,15 @@
+{
+  "id": "swing.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "shuffle.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

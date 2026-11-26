@@ -1,0 +1,11 @@
+{
+  "id": "synth-brass.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "horn-section.winds"
+    }
+  ]
+}

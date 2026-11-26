@@ -1,0 +1,15 @@
+{
+  "id": "choir.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "vocal-harmonies.vocals"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "gang-vocals.vocals"
+    }
+  ]
+}

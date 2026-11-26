@@ -1,0 +1,16 @@
+{
+  "id": "clave.percussion",
+  "facet": "percussion",
+  "sameWord": "clave",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "clave.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "afro-cuban.genre"
+    }
+  ]
+}

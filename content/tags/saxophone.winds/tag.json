@@ -1,0 +1,11 @@
+{
+  "id": "saxophone.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "clarinet.winds"
+    }
+  ]
+}

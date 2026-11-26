@@ -1,0 +1,11 @@
+{
+  "id": "metal.genre",
+  "facet": "genre",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "rock.genre"
+    }
+  ]
+}

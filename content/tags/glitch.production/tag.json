@@ -1,0 +1,11 @@
+{
+  "id": "glitch.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
+    }
+  ]
+}

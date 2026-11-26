@@ -1,0 +1,15 @@
+{
+  "id": "scratching.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "vocal-chops.vocals"
+    },
+    {
+      "type": "often-with",
+      "target": "hip-hop.genre"
+    }
+  ]
+}

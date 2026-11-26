@@ -1,0 +1,11 @@
+{
+  "id": "drum-solo.form",
+  "facet": "form",
+  "examples": [],
+  "related": [
+    {
+      "type": "broader",
+      "target": "solo.form"
+    }
+  ]
+}

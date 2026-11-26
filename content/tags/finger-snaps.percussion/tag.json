@@ -1,0 +1,11 @@
+{
+  "id": "finger-snaps.percussion",
+  "facet": "percussion",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "handclaps.percussion"
+    }
+  ]
+}

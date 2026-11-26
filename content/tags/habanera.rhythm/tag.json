@@ -1,0 +1,15 @@
+{
+  "id": "habanera.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "tresillo.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "tango.genre"
+    }
+  ]
+}

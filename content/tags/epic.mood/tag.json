@@ -1,0 +1,11 @@
+{
+  "id": "epic.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "orchestra.instrumentation"
+    }
+  ]
+}
