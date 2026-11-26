@@ -1,0 +1,15 @@
+{
+  "id": "peaceful.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "aggressive.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "environmental-sounds.production"
+    }
+  ]
+}

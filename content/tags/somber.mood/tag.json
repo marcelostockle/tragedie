@@ -1,0 +1,15 @@
+{
+  "id": "somber.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "melancholic.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dark.mood"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "relaxed.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "energetic.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "bossa-nova.genre"
+    }
+  ]
+}

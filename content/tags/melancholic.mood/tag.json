@@ -1,0 +1,15 @@
+{
+  "id": "melancholic.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "joyful.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "somber.mood"
+    }
+  ]
+}

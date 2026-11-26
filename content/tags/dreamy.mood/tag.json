@@ -1,0 +1,11 @@
+{
+  "id": "dreamy.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "reverb-heavy.production"
+    }
+  ]
+}

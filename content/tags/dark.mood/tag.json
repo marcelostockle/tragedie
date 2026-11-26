@@ -1,0 +1,19 @@
+{
+  "id": "dark.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "warm.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "eerie.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "somber.mood"
+    }
+  ]
+}
