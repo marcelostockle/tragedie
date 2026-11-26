@@ -1,0 +1,15 @@
+{
+  "id": "extended-chords.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "power-chords.harmony"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

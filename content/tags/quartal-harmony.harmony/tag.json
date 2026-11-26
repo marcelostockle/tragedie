@@ -1,0 +1,11 @@
+{
+  "id": "quartal-harmony.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "drone.harmony",
+  "facet": "harmony",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "descending-bass-line.harmony"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "pad.synth"
+    },
+    {
+      "type": "often-with",
+      "target": "bagpipes.winds"
+    },
+    {
+      "type": "often-with",
+      "target": "sitar.strings"
+    }
+  ]
+}
