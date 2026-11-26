@@ -1,0 +1,19 @@
+{
+  "id": "soundfont.synth",
+  "facet": "synth",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "midi-sound.synth"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "synth-brass.synth"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "synth-strings.synth"
+    }
+  ]
+}

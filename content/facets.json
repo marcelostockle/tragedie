@@ -75,8 +75,8 @@
     "id": "synth",
     "name": { "en": "Synth", "es": "Sintetizador" },
     "definition": {
-      "en": "Synthesised and electronic sound design: pads, leads, arpeggios and the character of the synthesis. Not a synth playing the bass role, which goes in bass.",
-      "es": "Diseño de sonido sintetizado y electrónico: pads, leads, arpegios y el carácter de la síntesis. No un sintetizador que cumple el rol de bajo, que va en bajo."
+      "en": "Synthesised, sampled and electronic sound design: pads, leads, arpeggios, the character of the synthesis, and instruments that audibly come from samples or soundfonts. Not a synth playing the bass role, which goes in bass.",
+      "es": "Diseño de sonido sintetizado, muestreado y electrónico: pads, leads, arpegios, el carácter de la síntesis e instrumentos que suenan claramente a muestras o soundfonts. No un sintetizador que cumple el rol de bajo, que va en bajo."
     }
   },
   {
