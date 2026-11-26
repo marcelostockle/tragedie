@@ -1,0 +1,19 @@
+{
+  "id": "vibraphone.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "glockenspiel.keys"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "marimba.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "melodica.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "accordion.keys"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "harmonica.winds"
+    }
+  ]
+}

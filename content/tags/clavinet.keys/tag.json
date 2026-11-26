@@ -1,0 +1,15 @@
+{
+  "id": "clavinet.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "electric-piano.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

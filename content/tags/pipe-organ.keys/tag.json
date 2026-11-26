@@ -1,0 +1,15 @@
+{
+  "id": "pipe-organ.keys",
+  "facet": "keys",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "hammond-organ.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}
