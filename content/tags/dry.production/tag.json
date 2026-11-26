@@ -1,0 +1,11 @@
+{
+  "id": "dry.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "reverb-heavy.production"
+    }
+  ]
+}
