@@ -1,0 +1,11 @@
+{
+  "id": "processed-horn.winds",
+  "facet": "winds",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}
