@@ -1,0 +1,11 @@
+{
+  "id": "piano-trio.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "jazz.genre"
+    }
+  ]
+}

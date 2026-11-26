@@ -1,0 +1,15 @@
+{
+  "id": "voice-and-guitar.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "singer-songwriter.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "acoustic-guitar.strings"
+    }
+  ]
+}

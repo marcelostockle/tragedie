@@ -1,0 +1,15 @@
+{
+  "id": "brass-band.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "big-band.instrumentation"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "marching-band.instrumentation"
+    }
+  ]
+}

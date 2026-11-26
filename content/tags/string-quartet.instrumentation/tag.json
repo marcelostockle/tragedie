@@ -1,0 +1,19 @@
+{
+  "id": "string-quartet.instrumentation",
+  "facet": "instrumentation",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "chamber-ensemble.instrumentation"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "string-section.strings"
+    },
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}

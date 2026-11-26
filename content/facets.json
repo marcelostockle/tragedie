@@ -35,8 +35,8 @@
     "id": "instrumentation",
     "name": { "en": "Instrumentation", "es": "Instrumentación" },
     "definition": {
-      "en": "How instruments are combined into ensembles (piano trio, string quartet, big band, orchestra), plus any instrument that has no family facet of its own. The sound and technique of instruments with their own facet go there instead.",
-      "es": "Cómo se combinan los instrumentos en conjuntos (trío de piano, cuarteto de cuerdas, big band, orquesta), más cualquier instrumento que no tenga una faceta de familia propia. El sonido y la técnica de los instrumentos con faceta propia van allí."
+      "en": "How instruments are combined into ensembles (piano trio, string quartet, big band, orchestra). The sound and technique of an individual instrument go in that instrument's own facet instead.",
+      "es": "Cómo se combinan los instrumentos en conjuntos (trío de piano, cuarteto de cuerdas, big band, orquesta). El sonido y la técnica de cada instrumento van en la faceta propia de ese instrumento."
     }
   },
   {
@@ -59,8 +59,8 @@
     "id": "winds",
     "name": { "en": "Winds", "es": "Vientos" },
     "definition": {
-      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet, tuba), their sound and how they are played, including mutes and sizes. Wind instruments stay here even when they play a bass line.",
-      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete, tuba), su sonido y cómo se tocan, incluidas las sordinas y los tamaños. Los instrumentos de viento se quedan aquí aunque toquen una línea de bajo."
+      "en": "Brass and woodwind instruments (trumpet, trombone, saxophone, flute, clarinet, tuba), their sound and how they are played, including mutes and sizes, plus whistling. Wind instruments stay here even when they play a bass line.",
+      "es": "Instrumentos de metal y de madera (trompeta, trombón, saxofón, flauta, clarinete, tuba), su sonido y cómo se tocan, incluidas las sordinas y los tamaños, además del silbido. Los instrumentos de viento se quedan aquí aunque toquen una línea de bajo."
     }
   },
   {
