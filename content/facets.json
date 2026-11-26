@@ -80,14 +80,6 @@
     }
   },
   {
-    "id": "timbre",
-    "name": { "en": "Timbre", "es": "Timbre" },
-    "definition": {
-      "en": "The tonal colour of the sound, of a single part or of the ensemble as a whole, independent of which instrument produces it. Adjectives such as warm or bright live here, while named varieties of an instrument go in its own facet. Not how the recording was made or processed.",
-      "es": "El color tonal del sonido, de una parte o del conjunto completo, independiente de qué instrumento lo produce. Adjetivos como cálido o brillante viven aquí, mientras que las variedades con nombre de un instrumento van en su propia faceta. No cómo se grabó o procesó la pista."
-    }
-  },
-  {
     "id": "vocals",
     "name": { "en": "Vocals", "es": "Voces" },
     "definition": {
