@@ -1,0 +1,11 @@
+{
+  "id": "raspy.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "harsh-vocals.vocals"
+    }
+  ]
+}

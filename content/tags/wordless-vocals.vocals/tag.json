@@ -1,0 +1,11 @@
+{
+  "id": "wordless-vocals.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "scat.vocals"
+    }
+  ]
+}

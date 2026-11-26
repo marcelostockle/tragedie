@@ -1,0 +1,15 @@
+{
+  "id": "belting.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "falsetto.vocals"
+    },
+    {
+      "type": "contrasts",
+      "target": "whisper.vocals"
+    }
+  ]
+}

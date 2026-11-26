@@ -1,0 +1,11 @@
+{
+  "id": "vocoder.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "synthesized-voice.vocals"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "operatic.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "classical.genre"
+    }
+  ]
+}

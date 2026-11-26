@@ -1,0 +1,11 @@
+{
+  "id": "falsetto.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "contrasts",
+      "target": "belting.vocals"
+    }
+  ]
+}
