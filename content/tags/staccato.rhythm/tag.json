@@ -1,0 +1,19 @@
+{
+  "id": "staccato.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "pizzicato.strings"
+    },
+    {
+      "type": "often-with",
+      "target": "horn-stabs.winds"
+    },
+    {
+      "type": "often-with",
+      "target": "synth-stab.synth"
+    }
+  ]
+}
