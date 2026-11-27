@@ -3,8 +3,10 @@ import { join } from "node:path";
 import { Hono, type Context } from "hono";
 import { z } from "zod";
 import {
+  canonicalLink,
   checkContent,
   type Content,
+  extractVideoId,
   loadContent,
   LOCALES,
   localized,
@@ -12,8 +14,10 @@ import {
   TagFile,
   TagProse,
   Track,
+  trackIdFromVideoId,
   videoIdFromTrackId,
 } from "@tragedie/schema";
+import { lookup, LookupError } from "./lookup.js";
 
 const TagPayload = z.object({ file: TagFile, prose: localized(TagProse) });
 
@@ -21,7 +25,7 @@ const TagPayload = z.object({ file: TagFile, prose: localized(TagProse) });
  * Local admin API. Reads and writes per-entity files under `contentRoot`.
  * Every write is validated with the shared schema, including cross-references.
  */
-export function createApp(contentRoot: string) {
+export function createApp(contentRoot: string, fetchImpl: typeof fetch = fetch) {
   const app = new Hono();
 
   // Reading ~1.3k files takes about a second, so keep the last load in memory. A page load
@@ -34,6 +38,53 @@ export function createApp(contentRoot: string) {
     const { content, issues } = loadContent(contentRoot);
     cache = content;
     return c.json({ ...content, issues });
+  });
+
+  app.post("/api/lookup", async (c) => {
+    const body = (await c.req.json().catch(() => null)) as { url?: unknown } | null;
+    if (typeof body?.url !== "string") return c.json({ errors: ["url is required"] }, 400);
+    try {
+      return c.json(await lookup(body.url, fetchImpl));
+    } catch (e) {
+      const status = e instanceof LookupError ? 422 : 502;
+      return c.json({ errors: [e instanceof Error ? e.message : String(e)] }, status);
+    }
+  });
+
+  app.post("/api/tracks", async (c) => {
+    const body = (await c.req.json().catch(() => null)) as Record<string, unknown> | null;
+    const videoId = typeof body?.link === "string" ? extractVideoId(body.link) : null;
+    if (!videoId) return c.json({ errors: ["link: not a YouTube video link"] }, 400);
+    const parsed = Track.safeParse({
+      title: body?.title,
+      artists: body?.artists,
+      ...(body?.album ? { album: body.album } : {}),
+      id: trackIdFromVideoId(videoId),
+      link: canonicalLink(videoId),
+      tags: [],
+      ratings: {},
+      pinned: false,
+      lastUpdated: new Date().toISOString(),
+    });
+    if (!parsed.success) {
+      return c.json({ errors: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`) }, 400);
+    }
+    const track = parsed.data;
+
+    const content = current();
+    if (content.tracks.some((t) => t.id === track.id)) {
+      return c.json({ errors: [`track already exists: ${track.id}`], id: track.id }, 409);
+    }
+    const next = { ...content, tracks: [...content.tracks, track] };
+    const file = `tracks/${videoId}.json`;
+    const errors = checkContent(next)
+      .filter((i) => i.file === file)
+      .map((i) => i.message);
+    if (errors.length) return c.json({ errors }, 422);
+
+    writeAtomic(join(contentRoot, file), JSON.stringify(track, null, 2) + "\n");
+    cache = next;
+    return c.json(track, 201);
   });
 
   app.put("/api/tracks/:videoId", async (c) => {
