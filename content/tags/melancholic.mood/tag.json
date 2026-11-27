@@ -5,11 +5,15 @@
   "related": [
     {
       "type": "contrasts",
-      "target": "joyful.mood"
+      "target": "cheerful.mood"
     },
     {
       "type": "not-to-be-confused-with",
       "target": "somber.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "morose.mood"
     }
   ]
 }

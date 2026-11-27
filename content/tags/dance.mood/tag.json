@@ -1,0 +1,15 @@
+{
+  "id": "dance.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "energetic.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "four-on-the-floor.rhythm"
+    }
+  ]
+}

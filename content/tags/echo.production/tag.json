@@ -10,6 +10,10 @@
     {
       "type": "often-with",
       "target": "reggae.genre"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "moving-pan.production"
     }
   ]
 }

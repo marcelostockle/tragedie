@@ -1,0 +1,15 @@
+{
+  "id": "summer.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "cheerful.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "laid-back.mood"
+    }
+  ]
+}

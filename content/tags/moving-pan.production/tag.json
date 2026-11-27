@@ -1,0 +1,11 @@
+{
+  "id": "moving-pan.production",
+  "facet": "production",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "echo.production"
+    }
+  ]
+}
