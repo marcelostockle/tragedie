@@ -7,7 +7,7 @@
     "apps/*"
   ],
   "scripts": {
-    "test": "npm test -w @tragedie/schema -w @tragedie/admin",
+    "test": "npm test -w @tragedie/schema -w @tragedie/admin -w @tragedie/site",
     "typecheck": "npm run typecheck -w @tragedie/schema -w @tragedie/admin -w @tragedie/site",
     "validate": "npm run validate -w @tragedie/schema",
     "vocab": "npm run -s vocab -w @tragedie/schema --",

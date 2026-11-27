@@ -8,12 +8,14 @@
 >
 > Items marked **[DECIDE]** are open. Everything else is settled.
 
-> **Status, 2026-11-26.** Phase 0 is done and phase 1 is partly done: the schema package, the
-> track migration (1,267 tracks in `content/`), the admin's track and tag editors, and the
-> `tag-brainstorm` skill exist. The vocabulary pass (phase 3) is well under way: 14 facets and
-> 240 tags, all defined in `en` and `es`, none yet applied to tracks. Still to build: import,
-> vocabulary maintenance, queues, the rhythm pattern editor, and the whole public site. See §12
-> for detail and §13 for what is still open. For how to run things, see `README.md`.
+> **Status, 2026-11-27.** Phase 0 is done, phase 1 is partly done, and phase 2 (the public site's
+> core) is built but not yet deployed. Exists: the schema package, the track migration (1,267
+> tracks in `content/`), the admin's track and tag editors, the `tag-brainstorm` skill, and
+> `apps/site` (i18n routes, tag pages, a library view with a hover/lock panel). The vocabulary
+> pass (phase 3) is well under way: 14 facets and 240 tags, all defined in `en` and `es`, none
+> yet applied to tracks. Still to build: import, vocabulary maintenance, queues, the rhythm
+> pattern editor, and the deploy. See §12 for detail and §13 for what is still open. For how to
+> run things, see `README.md`.
 
 ## 1. What this is
 
@@ -135,7 +137,8 @@ optional: a few migrated tracks never had a `lastUpdated`. The admin server stam
 - `id`: stable slug that is unique across the whole vocabulary. In practice every tag uses
   `<slug>.<facet>` (`warm.timbre`, `acid-bass.bass`), so a homonym in another facet gets a
   different id for free. The id never changes once tracks reference it. The slug rule lives
-  in one place (`ids.ts`). **Open:** how an id maps to a URL slug (§7 uses `warm-timbre`).
+  in one place (`ids.ts`). **Decided:** the id is the URL slug (`/en/tags/warm.timbre/`), so
+  there is nothing to map or keep in sync.
 - `facet`: exactly one. Facets are *aspects of a song being described*. **Decided, 14
   facets:** genre, rhythm, percussion, harmony, instrumentation, strings, bass, winds, keys,
   synth, vocals, mood, production, form. The instrument families (strings, bass, winds,
@@ -181,7 +184,7 @@ directory names match ids.
 - One **source locale** is authoritative. Other locales may lag. The site falls back to the
   source locale per field, and the admin shows a "missing translation" queue per locale.
 - Locale-prefixed routes (`/en/…`, `/es/…`), with locale-independent stable ids in URLs for
-  tag pages (`/en/tags/warm-timbre`).
+  tag pages (`/en/tags/warm.timbre/`).
 - **Decided:** locales are `en` (source) and `es`. They are encoded in the schema as a
   `LOCALES` const, with `Locale` derived from it and a `SOURCE_LOCALE` beside it. Adding a
   locale is a one-line change and the compiler flags everything that needs updating.
@@ -286,22 +289,49 @@ From `res-mantra/tracks.json`, carry over only:
 1. **Admin + pipeline** *(partly done)*: §9, plus the track migration script (§10). The migration is
    done: the old tracks (untagged) live in `content/` and pass validation. Left: import, vocabulary
    maintenance, the rhythm pattern editor, the validate and build buttons.
-2. **Walking skeleton site** *(not started)*: a deliberately ugly Astro site that lists tracks and tag
-   pages and deploys to Cloudflare. It exists only to prove edit → validate → build → deploy →
-   visible online.
+2. **Public site core** *(built, not deployed)*: the parts any public design needs, in a rough
+   look. There are **no per-track pages**: tracks are data that a browsing widget reads, and
+   only tags get static pages. Built in `apps/site`:
+   - **i18n and layout:** `/en/…` and `/es/…` routes (`/` forwards to the source locale), a
+     header with navigation and a language switch, and typed UI strings where a missing
+     translation is a compile error.
+   - **Data:** `buildPublicData` (in `packages/schema`) turns content into one shared
+     `data/tracks.json` (about 300 KB, 69 KB gzipped) and a `data/<locale>.json` dictionary per
+     locale. Names and definitions fall back to the source locale field by field. Content is
+     validated when the site builds, so invalid content fails the build.
+   - **Tag pages:** an index by facet and one static page per tag and locale, with the
+     definition, notes (markdown), typed related tags, same-word siblings, examples, and the
+     tracks that carry it.
+   - **Library view:** search, filter by tag, sort by dimension, and a side panel that previews
+     on hover and locks on click, showing the track's tags and a rating polygon (one axis per
+     dimension, unrated dimensions left as gaps, never plotted as 0). On narrow screens the panel
+     is a bottom sheet that opens on lock, because touch has no hover.
+   - **Left to do:** the Cloudflare deploy (see `README.md`), then check it online.
+   The map idea below is deliberately not part of this.
 3. **Vocabulary pass** *(in progress)*: build the tag vocabulary and re-tag tracks from zero; write
    definitions, examples and rhythm patterns (this is the real work and can overlap with phase 1).
    Done so far: 14 facets and 240 tags with `en` and `es` definitions and relations. Not done:
    tagging tracks, examples (none yet), rhythm patterns. The `tag-brainstorm` skill supports this.
 4. **Public app** *(not started)*: the exploratory UI. Design it fresh, after phases 1–3 show what
-   the content looks like.
+   the content looks like. It builds on phase 2's pages and data. One option under
+   consideration, **not decided**: a tag relationship map. Tags sit grouped by facet; selecting
+   one filters the map and draws rays to tags that co-occur with it, and any multi-selection
+   becomes a track search. Notes if it is built: a pre-baked pairwise matrix is not enough,
+   because multi-select needs conditional counts, so ship an inverted index (tag → track ids)
+   and compute live (1,267 tracks is tiny). Use a normalised measure (Jaccard or lift, with a
+   minimum count) for the rays, since raw counts make popular tags look bonded to everything.
+   Draw rays only from selected tags to keep it from becoming a hairball, and keep a list
+   fallback for small screens. It only becomes useful once tracks are tagged. This reverses
+   the earlier "no conceptual-map visualization" call (§5), which was about the curated
+   `related` edges, so confirm before building.
 
 ## 13. Open decisions, in one place
 
 Settled since the first draft: locales (`en` source, `es`), URL param stripping (keep only
 `v`), link independent of id, npm workspaces, genres as plain tags (no genre file), the 14
 facets, ids as `<slug>.<facet>`, the 1–5 rating scale, Svelte 5 + Hono for the admin (no
-PrimeVue), no tag `status` for now.
+PrimeVue), no tag `status` for now, the tag id as the URL slug, and no per-track pages
+(tracks are data for a widget; only tags get static pages).
 
 The `tag-brainstorm` skill (`.claude/skills/tag-brainstorm/`) is built, for drafting tags with
 the owner or in separate agent sessions. The tag schema is the contract it writes against,
@@ -309,9 +339,9 @@ so keep that strict and its errors clear.
 
 Still open:
 
-- How a tag id maps to a URL slug (§5, §7).
+- Whether to build the tag relationship map (§12.4).
 - Whether tags ever need deprecating, and so whether `status` or a separate mechanism is
   needed. Decide with vocabulary maintenance (§9.5).
 - The final genre tag set (§3.3). The owner's call, and the vocabulary pass is where it settles.
 - Rhythm pattern format (§6).
-- Embed vs link-out for YouTube on the public site (§8).
+- Embed vs link-out for YouTube on the public site (§8). For now the site links out.
