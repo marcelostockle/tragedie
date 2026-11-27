@@ -1,0 +1,19 @@
+{
+  "id": "sabor.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "often-with",
+      "target": "afro-cuban.genre"
+    },
+    {
+      "type": "often-with",
+      "target": "congas-and-bongos.percussion"
+    },
+    {
+      "type": "often-with",
+      "target": "timbales.percussion"
+    }
+  ]
+}

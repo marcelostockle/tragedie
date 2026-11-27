@@ -10,6 +10,10 @@
     {
       "type": "not-to-be-confused-with",
       "target": "dark.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "morose.mood"
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
-  "id": "joyful.mood",
+  "id": "morose.mood",
   "facet": "mood",
   "examples": [],
   "related": [
     {
-      "type": "contrasts",
+      "type": "not-to-be-confused-with",
       "target": "melancholic.mood"
     },
     {
       "type": "not-to-be-confused-with",
-      "target": "uplifting.mood"
+      "target": "somber.mood"
     }
   ]
 }

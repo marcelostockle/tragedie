@@ -5,7 +5,11 @@
   "related": [
     {
       "type": "contrasts",
-      "target": "relaxed.mood"
+      "target": "laid-back.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dance.mood"
     }
   ]
 }

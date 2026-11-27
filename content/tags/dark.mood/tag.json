@@ -14,6 +14,10 @@
     {
       "type": "not-to-be-confused-with",
       "target": "somber.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "smoky.mood"
     }
   ]
 }
