@@ -2,10 +2,5 @@
   "id": "uplifting.mood",
   "facet": "mood",
   "examples": [],
-  "related": [
-    {
-      "type": "not-to-be-confused-with",
-      "target": "cheerful.mood"
-    }
-  ]
+  "related": []
 }
