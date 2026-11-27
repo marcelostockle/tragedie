@@ -1,12 +1,8 @@
 {
-  "id": "bongos.percussion",
+  "id": "congas-and-bongos.percussion",
   "facet": "percussion",
   "examples": [],
   "related": [
-    {
-      "type": "not-to-be-confused-with",
-      "target": "congas.percussion"
-    },
     {
       "type": "often-with",
       "target": "afro-cuban.genre"

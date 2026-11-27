@@ -6,6 +6,10 @@
     {
       "type": "often-with",
       "target": "afro-cuban.genre"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "congas-and-bongos.percussion"
     }
   ]
 }
