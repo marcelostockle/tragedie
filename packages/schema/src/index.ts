@@ -8,3 +8,4 @@ export * from "./tag.js";
 export * from "./content.js";
 export * from "./validate.js";
 export * from "./migrate.js";
+export * from "./public.js";

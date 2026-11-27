@@ -1,0 +1,69 @@
+---
+import { LOCALES, type Locale } from "@tragedie/schema/browser";
+import { LOCALE_NAMES, strings } from "../i18n/strings";
+import { localePath, switchLocale } from "../i18n/paths";
+import "../styles/global.css";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  /** Which nav entry is current. */
+  section?: "library" | "tags";
+}
+
+const { locale, title, description, section } = Astro.props;
+const t = strings(locale);
+const pathname = Astro.url.pathname;
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title === t.siteTitle ? title : `${title} · ${t.siteTitle}`}</title>
+    {description && <meta name="description" content={description} />}
+    {
+      LOCALES.map((l) => (
+        <link rel="alternate" hreflang={l} href={switchLocale(pathname, l)} />
+      ))
+    }
+  </head>
+  <body>
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href={localePath(locale)}>{t.siteTitle}</a>
+        <nav aria-label="Main">
+          <a href={localePath(locale)} aria-current={section === "library" ? "page" : undefined}>{t.nav.library}</a>
+          <a href={localePath(locale, "tags")} aria-current={section === "tags" ? "page" : undefined}>{t.nav.tags}</a>
+        </nav>
+        <nav class="langs" aria-label={t.nav.language}>
+          {
+            LOCALES.map((l) => (
+              <a
+                href={switchLocale(pathname, l)}
+                hreflang={l}
+                lang={l}
+                aria-current={l === locale ? "true" : undefined}>{LOCALE_NAMES[l]}</a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  header { border-bottom: 1px solid var(--line); background: var(--band); }
+  .bar { display: flex; align-items: baseline; gap: 1.4rem; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+  .brand { font-weight: 700; font-size: 1.1rem; color: var(--fg); text-decoration: none; }
+  nav { display: flex; gap: 1rem; }
+  nav a { color: var(--fg); text-decoration: none; padding-bottom: 0.1rem; border-bottom: 2px solid transparent; }
+  nav a:hover { border-bottom-color: var(--muted); }
+  nav a[aria-current] { border-bottom-color: var(--accent); font-weight: 600; }
+  .langs { margin-left: auto; font-size: 0.9rem; }
+  main { padding-top: 1.2rem; padding-bottom: 3rem; }
+</style>

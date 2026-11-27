@@ -1,0 +1,175 @@
+---
+import { marked } from "marked";
+import { LOCALES, RELATION_TYPES, type Locale } from "@tragedie/schema/browser";
+import Layout from "../../../layouts/Layout.astro";
+import { fmt, strings } from "../../../i18n/strings";
+import { localePath } from "../../../i18n/paths";
+import { publicData } from "../../../lib/content";
+
+// The tag id is the URL slug: ids are already `<slug>.<facet>`, so nothing needs mapping.
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    publicData.dictionaries[locale].tags.map((tag) => ({ params: { locale, id: tag.id } })),
+  );
+}
+
+const locale = Astro.params.locale as Locale;
+const id = Astro.params.id as string;
+const t = strings(locale);
+const dict = publicData.dictionaries[locale];
+const tag = dict.tags.find((x) => x.id === id)!;
+
+const tagById = new Map(dict.tags.map((x) => [x.id, x]));
+const facetById = new Map(dict.facets.map((f) => [f.id, f]));
+const trackById = new Map(publicData.tracks.map((x) => [x.id, x]));
+const facet = facetById.get(tag.facet);
+
+// Notes are the owner's own markdown, so they are rendered as written.
+const notesHtml = tag.notes ? (marked.parse(tag.notes, { async: false }) as string) : "";
+
+const related = RELATION_TYPES.map((type) => ({
+  type,
+  tags: tag.related
+    .filter((r) => r.type === type)
+    .map((r) => tagById.get(r.target))
+    .filter((x) => x !== undefined)
+    .sort((a, b) => a.name.localeCompare(b.name, locale)),
+})).filter((g) => g.tags.length);
+
+const siblings = tag.sameWord
+  ? dict.tags.filter((x) => x.sameWord === tag.sameWord && x.id !== tag.id)
+  : [];
+
+const examples = tag.examples.flatMap((e) => {
+  const track = trackById.get(e.trackId);
+  return track ? [{ ...e, track }] : [];
+});
+
+/** Link to the example at its start time. The stored link stays clean; `t` is added only here. */
+const exampleHref = (link: string, start?: number) =>
+  start === undefined ? link : `${link}&t=${Math.floor(start)}s`;
+const clock = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+
+const MAX_TRACKS = 30;
+const carriers = publicData.tracks
+  .filter((x) => x.tags.includes(tag.id))
+  .sort((a, b) => a.title.localeCompare(b.title, locale));
+---
+<Layout locale={locale} title={tag.name} description={tag.definition} section="tags">
+  <p><a href={localePath(locale, "tags")}>← {t.tags.back}</a></p>
+
+  <h1>{tag.name}</h1>
+  <p class="muted facet">
+    {t.tags.facet}: <span title={facet?.definition}>{facet?.name ?? tag.facet}</span>
+    · {tag.count === 1 ? t.tags.countOne : fmt(t.tags.countTracks, { n: tag.count })}
+  </p>
+  {tag.fallback && <p class="notice">{t.tags.shownInSource}</p>}
+
+  <p class="definition">{tag.definition}</p>
+
+  {
+    notesHtml && (
+      <section>
+        <h2>{t.tags.notes}</h2>
+        <div class="notes" set:html={notesHtml} />
+      </section>
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <section>
+        <h2>{t.tags.related}</h2>
+        {related.map((g) => (
+          <div class="rel">
+            <strong>{t.relations[g.type]}</strong>
+            <ul>
+              {g.tags.map((x) => (
+                <li>
+                  <a class="chip" href={localePath(locale, `tags/${x.id}`)} title={x.definition}>{x.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    )
+  }
+
+  {
+    siblings.length > 0 && (
+      <section>
+        <h2>{t.tags.sameWord}</h2>
+        <ul class="inline">
+          {siblings.map((x) => (
+            <li>
+              <a class="chip" href={localePath(locale, `tags/${x.id}`)} title={x.definition}>{x.name}</a>
+              <small class="muted"> {facetById.get(x.facet)?.name}</small>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section>
+    <h2>{t.tags.examples}</h2>
+    {
+      examples.length === 0 ? (
+        <p class="muted">{t.tags.noExamples}</p>
+      ) : (
+        <ul class="plain">
+          {examples.map((e) => (
+            <li>
+              <a href={exampleHref(e.track.link, e.start)} rel="noreferrer noopener" target="_blank">
+                {e.track.title}
+              </a>
+              <span class="muted"> {e.track.artists.join(", ")}</span>
+              {e.start !== undefined && (
+                <span class="muted"> · {clock(e.start)}{e.end !== undefined ? `–${clock(e.end)}` : ""}</span>
+              )}
+              {e.note && <div class="muted">{e.note}</div>}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+
+  <section>
+    <h2>{t.tags.tracksWith}</h2>
+    {
+      carriers.length === 0 ? (
+        <p class="muted">{t.tags.noTracks}</p>
+      ) : (
+        <>
+          <ul class="plain">
+            {carriers.slice(0, MAX_TRACKS).map((x) => (
+              <li>
+                <a href={`${localePath(locale)}?track=${encodeURIComponent(x.id)}`}>{x.title}</a>
+                <span class="muted"> {x.artists.join(", ")}</span>
+              </li>
+            ))}
+          </ul>
+          {carriers.length > MAX_TRACKS && (
+            <p class="muted">{fmt(t.tags.moreTracks, { n: carriers.length - MAX_TRACKS })}</p>
+          )}
+          <p><a href={`${localePath(locale)}?tag=${encodeURIComponent(tag.id)}`}>{t.tags.viewInLibrary}</a></p>
+        </>
+      )
+    }
+  </section>
+</Layout>
+
+<style>
+  .facet { margin: 0 0 1rem; }
+  .definition { font-size: 1.2rem; max-width: 46rem; margin: 0 0 1rem; }
+  .notice { background: var(--band); border-left: 3px solid var(--accent); padding: 0.4rem 0.8rem; max-width: 46rem; }
+  .notes { max-width: 46rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  ul.plain { display: block; }
+  ul.plain li { margin-bottom: 0.4rem; }
+  .rel { margin-bottom: 0.7rem; }
+  .rel strong { display: block; font-size: 0.9rem; margin-bottom: 0.2rem; }
+  .inline li { display: flex; align-items: baseline; gap: 0.3rem; }
+</style>

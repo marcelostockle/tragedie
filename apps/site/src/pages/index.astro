@@ -1,0 +1,19 @@
+---
+import { SOURCE_LOCALE } from "@tragedie/schema/browser";
+
+// Static hosting has no server to negotiate a language, so the root just forwards to the
+// source locale.
+const target = `/${SOURCE_LOCALE}/`;
+---
+<!doctype html>
+<html lang={SOURCE_LOCALE}>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+  </head>
+  <body>
+    <p><a href={target}>Continue</a></p>
+  </body>
+</html>

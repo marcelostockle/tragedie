@@ -7,12 +7,14 @@
     "apps/*"
   ],
   "scripts": {
-    "test": "npm test -w @tragedie/schema -w @tragedie/admin",
-    "typecheck": "npm run typecheck -w @tragedie/schema -w @tragedie/admin",
+    "test": "npm test -w @tragedie/schema -w @tragedie/admin -w @tragedie/site",
+    "typecheck": "npm run typecheck -w @tragedie/schema -w @tragedie/admin -w @tragedie/site",
     "validate": "npm run validate -w @tragedie/schema",
     "vocab": "npm run -s vocab -w @tragedie/schema --",
-    "ci": "npm run typecheck && npm test && npm run validate",
-    "admin": "npm run dev -w @tragedie/admin"
+    "ci": "npm run typecheck && npm test && npm run validate && npm run build",
+    "admin": "npm run dev -w @tragedie/admin",
+    "build": "npm run build -w @tragedie/site",
+    "site": "npm run dev -w @tragedie/site"
   },
   "devDependencies": {
     "typescript": "^5.9.0",
