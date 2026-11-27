@@ -6,3 +6,4 @@ export * from "./dimension.js";
 export * from "./facet.js";
 export * from "./track.js";
 export * from "./tag.js";
+export * from "./public.js";
