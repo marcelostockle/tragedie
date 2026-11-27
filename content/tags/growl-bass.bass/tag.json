@@ -1,5 +1,5 @@
 {
-  "id": "reese-bass.bass",
+  "id": "growl-bass.bass",
   "facet": "bass",
   "examples": [],
   "related": [
@@ -9,7 +9,11 @@
     },
     {
       "type": "not-to-be-confused-with",
-      "target": "wobble-bass.bass"
+      "target": "sub-bass.bass"
+    },
+    {
+      "type": "often-with",
+      "target": "electronic.genre"
     }
   ]
 }
