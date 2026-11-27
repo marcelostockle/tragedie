@@ -1,0 +1,18 @@
+---
+import { LOCALES, type Locale } from "@tragedie/schema/browser";
+import Layout from "../../layouts/Layout.astro";
+import Library from "../../components/Library.svelte";
+import { strings } from "../../i18n/strings";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = strings(locale);
+---
+<Layout locale={locale} title={t.library.title} section="library">
+  <h1 class="sr-only">{t.library.title}</h1>
+  <!-- The list is browsing UI that needs the data in the browser, so it hydrates on load. -->
+  <Library client:load locale={locale} ui={t.library} />
+</Layout>

@@ -1,0 +1,23 @@
+{
+  "name": "@tragedie/site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^9.1.0",
+    "@tragedie/schema": "*",
+    "astro": "^7.4.0",
+    "marked": "^18.3.0",
+    "svelte": "^5.43.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "svelte-check": "^4.3.0"
+  }
+}

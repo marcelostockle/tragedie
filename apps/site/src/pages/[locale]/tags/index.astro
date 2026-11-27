@@ -1,0 +1,57 @@
+---
+import { LOCALES, type Locale } from "@tragedie/schema/browser";
+import Layout from "../../../layouts/Layout.astro";
+import { strings } from "../../../i18n/strings";
+import { localePath } from "../../../i18n/paths";
+import { publicData } from "../../../lib/content";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = strings(locale);
+const dict = publicData.dictionaries[locale];
+
+// Facets alphabetically by their name in this locale; tags alphabetically within each.
+const groups = [...dict.facets]
+  .sort((a, b) => a.name.localeCompare(b.name, locale))
+  .map((facet) => ({
+    facet,
+    tags: dict.tags
+      .filter((tag) => tag.facet === facet.id)
+      .sort((a, b) => a.name.localeCompare(b.name, locale)),
+  }))
+  .filter((g) => g.tags.length);
+---
+<Layout locale={locale} title={t.tags.title} description={t.tags.intro} section="tags">
+  <h1>{t.tags.title}</h1>
+  <p class="muted">{t.tags.intro}</p>
+
+  {
+    groups.map((g) => (
+      <section class="group">
+        <h2 title={g.facet.definition}>{g.facet.name}</h2>
+        <p class="muted facet-def">{g.facet.definition}</p>
+        <ul>
+          {g.tags.map((tag) => (
+            <li>
+              <a class="chip" href={localePath(locale, `tags/${tag.id}`)} title={tag.definition}>
+                {tag.name}
+                {tag.count > 0 && <small> {tag.count}</small>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Layout>
+
+<style>
+  .group { padding: 0.2rem 1rem 1rem; margin: 0 -1rem; }
+  .group:nth-of-type(even) { background: var(--band); }
+  h2 { margin-top: 0.8rem; }
+  .facet-def { margin: 0 0 0.6rem; font-size: 0.92rem; max-width: 60rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+</style>
