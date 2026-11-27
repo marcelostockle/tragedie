@@ -25,6 +25,26 @@ export async function loadAll(): Promise<Loaded> {
 export const saveTrack = (track: Track) =>
   send<Track>("PUT", `/api/tracks/${track.id.slice(3)}`, track);
 
+export interface Lookup {
+  source: "youtube" | "spotify";
+  videoId?: string;
+  title?: string;
+  artists: string[];
+  album?: string;
+  year?: string;
+}
+
+export const lookupLink = (url: string) => send<Lookup>("POST", "/api/lookup", { url });
+
+export interface NewTrack {
+  link: string;
+  title: string;
+  artists: string[];
+  album?: string;
+}
+
+export const createTrack = (t: NewTrack) => send<Track>("POST", "/api/tracks", t);
+
 export interface TagPayload {
   file: LoadedTag["file"];
   prose: LoadedTag["prose"];
