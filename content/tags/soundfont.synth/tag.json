@@ -5,10 +5,6 @@
   "related": [
     {
       "type": "not-to-be-confused-with",
-      "target": "midi-sound.synth"
-    },
-    {
-      "type": "not-to-be-confused-with",
       "target": "synth-brass.synth"
     },
     {

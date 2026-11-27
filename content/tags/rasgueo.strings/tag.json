@@ -2,10 +2,5 @@
   "id": "rasgueo.strings",
   "facet": "strings",
   "examples": [],
-  "related": [
-    {
-      "type": "often-with",
-      "target": "nylon-guitar.strings"
-    }
-  ]
+  "related": []
 }
