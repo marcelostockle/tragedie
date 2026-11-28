@@ -83,14 +83,19 @@ text comes from `content/`, falling back to the source locale field by field.
 The library's tag filter and hover panel are only interesting once tracks carry tags, so tag a few
 in the admin before judging them.
 
-**Deploying to Cloudflare** (Pages, connected to this repo). These settings follow from how the
+**Deploying to Cloudflare.** The repo root has a `wrangler.jsonc` for Workers static assets
+(Cloudflare's current path for new projects; no adapter is needed for a static Astro site).
+Connect the repo as a Workers Builds project with these settings. They follow from how the
 project is built, but the deploy has not been tried yet:
 
 | Setting | Value |
 |---|---|
 | Build command | `npm ci && npm run build` |
-| Build output directory | `apps/site/dist` |
+| Deploy command | `npx wrangler deploy` |
 | Environment variable | `NODE_VERSION=24` |
+
+On a classic Pages project the config file is not needed: use the same build command, output
+directory `apps/site/dist`, and the same environment variable.
 
 Deploying is then a `git push`. If the build fails with content errors, run `npm run validate`
 locally to see them.

@@ -18,17 +18,18 @@ const now = new Date("2026-11-28T10:00:00.000Z");
 describe("drafts", () => {
   it("treats tag order as no change, and a different rating as a change", () => {
     const base = baseline(track);
-    expect(sameDraft(base, { tags: ["warm.mood"], ratings: { bass: 3 } })).toBe(true);
-    expect(sameDraft(base, { tags: [], ratings: { bass: 3 } })).toBe(false);
-    expect(sameDraft(base, { tags: ["warm.mood"], ratings: { bass: 4 } })).toBe(false);
-    expect(sameDraft(base, { tags: ["warm.mood"], ratings: {} })).toBe(false);
-    expect(sameDraft({ tags: ["a", "b"], ratings: {} }, { tags: ["b", "a"], ratings: {} })).toBe(true);
+    expect(sameDraft(base, { tags: ["warm.mood"], ratings: { bass: 3 }, pinned: true })).toBe(true);
+    expect(sameDraft(base, { ...base, pinned: false })).toBe(false);
+    expect(sameDraft(base, { tags: [], ratings: { bass: 3 }, pinned: true })).toBe(false);
+    expect(sameDraft(base, { tags: ["warm.mood"], ratings: { bass: 4 }, pinned: true })).toBe(false);
+    expect(sameDraft(base, { tags: ["warm.mood"], ratings: {}, pinned: true })).toBe(false);
+    expect(sameDraft({ tags: ["a", "b"], ratings: {}, pinned: false }, { tags: ["b", "a"], ratings: {}, pinned: false })).toBe(true);
   });
 
   it("builds a track the schema accepts, keeping everything it was not asked to change", () => {
-    const out = toTrack(track, { tags: ["warm.mood", "calm.mood"], ratings: { bass: 5 } }, now);
+    const out = toTrack(track, { tags: ["warm.mood", "calm.mood"], ratings: { bass: 5 }, pinned: false }, now);
     expect(Track.parse(out)).toEqual(out);
-    expect(out).toMatchObject({ title: "A", artists: ["X", "Y"], album: "Alb", pinned: true, lastUpdated: now.toISOString() });
+    expect(out).toMatchObject({ title: "A", artists: ["X", "Y"], album: "Alb", pinned: false, lastUpdated: now.toISOString() });
     expect(toTrack({ ...track, album: undefined } as PublicTrack, baseline(track), now)).not.toHaveProperty("album");
   });
 
@@ -45,7 +46,9 @@ describe("drafts", () => {
     expect(sanitize({ tags: ["warm.mood", "gone.mood", "warm.mood"], ratings: { bass: 2, mix: 3 } }, tags, dims)).toEqual({
       tags: ["warm.mood"],
       ratings: { bass: 2 },
+      pinned: false,
     });
+    expect(sanitize({ tags: [], ratings: {}, pinned: true }, tags, dims)?.pinned).toBe(true);
     expect(sanitize({ tags: [], ratings: { bass: 0 } }, tags, dims)?.ratings).toEqual({});
     expect(sanitize({ tags: [], ratings: { bass: 2.5 } }, tags, dims)?.ratings).toEqual({});
     expect(sanitize("junk", tags, dims)).toBeNull();

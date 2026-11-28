@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import {
     RATING_MAX,
     serializeTrack,
@@ -56,7 +56,7 @@
     if (typeof raw === "object" && raw !== null) {
       for (const [id, value] of Object.entries(raw)) {
         const track = byId.get(id);
-        const draft = track && sanitize(value, tagIds, dimIds);
+        const draft = track && sanitize(value, tagIds, dimIds, track?.pinned);
         if (track && draft && !sameDraft(draft, baseline(track))) out[id] = draft;
       }
     }
@@ -111,13 +111,13 @@
     // Clicking the current value clears it: a missing rating is "unrated", never 0.
     if (ratings[dim] === value) delete ratings[dim];
     else ratings[dim] = value;
-    update(selected, { tags: current.tags, ratings });
+    update(selected, { ...current, ratings });
   }
 
   function toggleTag(id: string) {
     if (!selected || !current) return;
     const tags = current.tags.includes(id) ? current.tags.filter((x) => x !== id) : [...current.tags, id];
-    update(selected, { tags, ratings: current.ratings });
+    update(selected, { ...current, tags });
     tagQuery = "";
   }
 
@@ -144,6 +144,23 @@
     const i = rows.findIndex((t) => t.id === selectedId);
     const target = rows[i < 0 ? 0 : i + step];
     if (target) selectedId = target.id;
+  }
+
+  function setPinned(pinned: boolean) {
+    if (selected && current) update(selected, { ...current, pinned });
+  }
+
+  /** On a phone the list and the editor take turns, so remember where the list was. */
+  let listScroll = 0;
+  function open(id: string) {
+    listScroll = window.scrollY;
+    selectedId = id;
+    window.scrollTo(0, 0);
+  }
+  async function back() {
+    selectedId = null;
+    await tick();
+    window.scrollTo(0, listScroll);
   }
 
   function revert() {
@@ -184,7 +201,7 @@
     <span class="muted">Unzip into <code>content/</code>, commit, push. Nothing is saved on the server.</span>
   </div>
 
-  <div class="layout">
+  <div class="layout" class:has-selection={selected}>
     <aside>
       <div class="controls">
         <input type="search" placeholder="Search title, artist, album" bind:value={query} />
@@ -199,7 +216,8 @@
       <ul>
         {#each rows as t (t.id)}
           <li>
-            <button class:active={t.id === selectedId} onclick={() => (selectedId = t.id)}>
+            <button class:active={t.id === selectedId} onclick={() => open(t.id)}>
+              {#if effective(t).pinned}<span class="star" title="pinned">★</span>{/if}
               <strong>{t.title}</strong>
               {#if t.id in drafts}<span class="dot" title="changed here">●</span>{/if}
               <span class="artist">{t.artists.join(", ")}</span>
@@ -218,11 +236,10 @@
             <a href={selected.link} target="_blank" rel="noreferrer noopener">open on YouTube</a>
           </p>
 
-          <div class="nav">
-            <button onclick={() => next(-1)}>← Previous</button>
-            <button onclick={() => next(1)}>Next →</button>
-            <button onclick={revert} disabled={!(selected.id in drafts)}>Revert this track</button>
-          </div>
+          <label class="pin">
+            <input type="checkbox" checked={current.pinned} onchange={(e) => setPinned(e.currentTarget.checked)} />
+            Pinned
+          </label>
 
           <h3>Ratings</h3>
           {#each dims as d (d.id)}
@@ -273,6 +290,12 @@
               {/each}
             </div>
           {/if}
+          <div class="nav">
+            <button class="back" onclick={back}>☰ List</button>
+            <button onclick={() => next(-1)}>← Prev</button>
+            <button onclick={() => next(1)}>Next →</button>
+            <button class="revert" onclick={revert} disabled={!(selected.id in drafts)}>Revert</button>
+          </div>
         {/key}
       {:else}
         <p class="muted">Select a track.</p>
@@ -283,7 +306,8 @@
 
 <style>
   .bar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 1rem; }
-  .bar button, .nav button, .add button { padding: 0.25rem 0.8rem; cursor: pointer; }
+  button { cursor: pointer; }
+  .bar button, .nav button, .add button { padding: 0.25rem 0.8rem; }
   .primary { background: var(--accent); color: var(--accent-fg); border: 0; border-radius: 0.3rem; }
   .primary:disabled { opacity: 0.4; cursor: default; }
   .layout { display: grid; grid-template-columns: 22rem 1fr; gap: 1.5rem; align-items: start; }
@@ -294,23 +318,60 @@
   aside li button:hover { background: var(--band); }
   aside li button.active { background: color-mix(in srgb, var(--accent) 18%, transparent); }
   .artist { display: block; color: var(--muted); font-size: 0.9em; }
-  .dot { color: var(--accent); }
-  h2 { margin-top: 0; }
-  .nav { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
-  .rating { display: flex; align-items: center; gap: 0.35rem; margin: 0.25rem 0; }
+  .dot, .star { color: var(--accent); }
+  section { display: flex; flex-direction: column; }
+  h2 { margin-top: 0; overflow-wrap: anywhere; }
+  .pin { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
+  .nav { display: flex; gap: 0.5rem; margin-top: 1.2rem; }
+  .back { display: none; }
+  .rating { display: flex; align-items: center; gap: 0.35rem; margin: 0.25rem 0; flex-wrap: wrap; }
   .rating .chip { min-width: 2rem; text-align: center; padding: 0.15rem 0.5rem; }
   .dim { width: 6.5rem; }
   .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin: 0.3rem 0; }
   .facet { min-width: 8rem; color: var(--muted); font-size: 0.85rem; }
   .add { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
-  .add input { flex: 1; }
+  .add input { flex: 1; min-width: 0; }
   .matches { list-style: none; margin: 0.3rem 0; padding: 0; border: 1px solid var(--line); }
   .matches button { all: unset; display: block; width: 100%; box-sizing: border-box; padding: 0.3rem 0.6rem; cursor: pointer; }
   .matches button:hover { background: var(--band); }
   .browse { margin-top: 0.8rem; padding: 0.6rem; border: 1px solid var(--line); }
   .error { color: crimson; }
+
+  /* Phone: the list and the editor take turns, and everything tappable gets room. */
   @media (max-width: 52rem) {
     .layout { grid-template-columns: 1fr; }
-    aside { position: static; max-height: 18rem; }
+    .layout.has-selection aside { display: none; }
+    .layout:not(.has-selection) section { display: none; }
+    aside { position: static; max-height: none; border-width: 1px 0; }
+    aside ul { overflow: visible; }
+    aside li button { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--line); }
+    .controls input, .controls select, .add input { min-height: 2.75rem; }
+
+    .bar { gap: 0.5rem; }
+    .bar .primary { flex: 1 1 100%; min-height: 2.75rem; }
+    .bar .muted { flex: 1 1 100%; font-size: 0.85rem; }
+
+    .rating { gap: 0.4rem; }
+    .dim { width: 100%; }
+    .rating .chip { min-width: 2.75rem; min-height: 2.75rem; padding: 0; font-size: 1.05rem; }
+    .chips { gap: 0.5rem; }
+    .chips .chip { min-height: 2.5rem; padding: 0 0.9rem; display: inline-flex; align-items: center; }
+    .facet { width: 100%; }
+    .add button { min-height: 2.75rem; }
+    .matches button { padding: 0.8rem 0.7rem; }
+    .pin { min-height: 2.75rem; font-size: 1.05rem; }
+    .pin input { width: 1.4rem; height: 1.4rem; }
+
+    /* Previous / next stay under the thumb while the editor scrolls. */
+    .nav {
+      position: sticky;
+      bottom: 0;
+      margin: 1.2rem -1rem 0;
+      padding: 0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom));
+      background: var(--band);
+      border-top: 1px solid var(--line);
+    }
+    .nav button { flex: 1; min-height: 2.75rem; }
+    .back { display: block; }
   }
 </style>

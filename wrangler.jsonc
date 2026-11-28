@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers static assets: serves the built site, no Worker script.
+  // Build command: npm ci && npm run build    Deploy command: npx wrangler deploy
+  "name": "tragedie",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./apps/site/dist",
+    "not_found_handling": "404-page"
+  }
+}
