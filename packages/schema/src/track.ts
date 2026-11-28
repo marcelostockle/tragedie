@@ -35,3 +35,22 @@ export const Track = z
     }
   });
 export type Track = z.infer<typeof Track>;
+
+/**
+ * The exact text of a track file. Key order is the schema's, so every writer (the admin and
+ * the public tagger) produces the same bytes and git diffs stay limited to real changes.
+ */
+export function serializeTrack(track: Track): string {
+  const ordered: Track = {
+    id: track.id,
+    title: track.title,
+    artists: track.artists,
+    ...(track.album !== undefined ? { album: track.album } : {}),
+    link: track.link,
+    tags: track.tags,
+    ratings: track.ratings,
+    pinned: track.pinned,
+    ...(track.lastUpdated !== undefined ? { lastUpdated: track.lastUpdated } : {}),
+  };
+  return JSON.stringify(ordered, null, 2) + "\n";
+}
