@@ -23,6 +23,7 @@ const pathname = Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title === t.siteTitle ? title : `${title} · ${t.siteTitle}`}</title>
     {description && <meta name="description" content={description} />}
+    <slot name="head" />
     {
       LOCALES.map((l) => (
         <link rel="alternate" hreflang={l} href={switchLocale(pathname, l)} />

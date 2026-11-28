@@ -95,6 +95,16 @@ project is built, but the deploy has not been tried yet:
 Deploying is then a `git push`. If the build fails with content errors, run `npm run validate`
 locally to see them.
 
+### Tagging away from the admin
+
+The site ships a tagger at `/admin/` for when the local admin is out of reach. It loads the
+published data, lets you tag and rate tracks, and keeps drafts in the browser's local storage.
+It never writes anywhere: **Download changed tracks** gives a zip of `tracks/<id>.json` files.
+Unzip it into `content/`, run `npm run validate`, commit and push. Once the redeploy publishes
+those changes, the drafts clear themselves. Only tags and ratings can be changed there; titles,
+artists, links and new tracks stay with the admin. The page is not linked from the site and is
+marked `noindex`, but anyone with the URL can open it (the output is harmless).
+
 ## Skills
 
 Project skills live in `.claude/skills/` and are picked up automatically by Claude Code

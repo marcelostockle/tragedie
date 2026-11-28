@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Tagger from "../../components/Tagger.svelte";
+---
+<Layout locale="en" title="Tagger">
+  <meta slot="head" name="robots" content="noindex" />
+  <h1>Tagger</h1>
+  <p class="muted">
+    Tag and rate tracks from here, then download the changed files. This page never writes to the
+    repository: you copy the files into <code>content/</code> yourself.
+  </p>
+  <!-- Needs the data and localStorage in the browser, so it renders there only. -->
+  <Tagger client:only="svelte" />
+</Layout>

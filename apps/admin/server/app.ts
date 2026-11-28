@@ -11,6 +11,7 @@ import {
   LOCALES,
   localized,
   serializeProse,
+  serializeTrack,
   TagFile,
   TagProse,
   Track,
@@ -82,7 +83,7 @@ export function createApp(contentRoot: string, fetchImpl: typeof fetch = fetch) 
       .map((i) => i.message);
     if (errors.length) return c.json({ errors }, 422);
 
-    writeAtomic(join(contentRoot, file), JSON.stringify(track, null, 2) + "\n");
+    writeAtomic(join(contentRoot, file), serializeTrack(track));
     cache = next;
     return c.json(track, 201);
   });
@@ -110,7 +111,7 @@ export function createApp(contentRoot: string, fetchImpl: typeof fetch = fetch) 
       .map((i) => i.message);
     if (errors.length) return c.json({ errors }, 422);
 
-    writeAtomic(join(contentRoot, file), JSON.stringify(track, null, 2) + "\n");
+    writeAtomic(join(contentRoot, file), serializeTrack(track));
     cache = next;
     return c.json(track);
   });
