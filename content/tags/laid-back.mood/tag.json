@@ -10,6 +10,10 @@
     {
       "type": "often-with",
       "target": "bossa-nova.genre"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "groovy.mood"
     }
   ]
 }

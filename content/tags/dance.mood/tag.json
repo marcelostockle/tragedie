@@ -10,6 +10,10 @@
     {
       "type": "often-with",
       "target": "four-on-the-floor.rhythm"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "groovy.mood"
     }
   ]
 }
