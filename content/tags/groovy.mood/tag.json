@@ -1,0 +1,23 @@
+{
+  "id": "groovy.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dance.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "laid-back.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "energetic.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

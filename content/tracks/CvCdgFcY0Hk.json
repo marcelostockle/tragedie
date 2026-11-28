@@ -8,8 +8,22 @@
   ],
   "album": "IF",
   "link": "https://www.youtube.com/watch?v=CvCdgFcY0Hk",
-  "tags": [],
-  "ratings": {},
+  "tags": [
+    "absorbing.mood",
+    "piano.keys",
+    "articulation-contrast.rhythm",
+    "saxophone.winds",
+    "extended-chords.harmony",
+    "truck-driver-modulation.harmony",
+    "live-recording.production"
+  ],
+  "ratings": {
+    "cadence": 4,
+    "richness": 5,
+    "bass": 3,
+    "mix": 2,
+    "feeling": 3
+  },
   "pinned": false,
-  "lastUpdated": "2026-08-24T03:18:56.666Z"
+  "lastUpdated": "2026-11-28T15:46:16.168Z"
 }
