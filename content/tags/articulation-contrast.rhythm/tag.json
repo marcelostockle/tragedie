@@ -1,0 +1,15 @@
+{
+  "id": "articulation-contrast.rhythm",
+  "facet": "rhythm",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "staccato.rhythm"
+    },
+    {
+      "type": "often-with",
+      "target": "funk.genre"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "wonder.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "epic.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "whimsy.mood"
+    }
+  ]
+}

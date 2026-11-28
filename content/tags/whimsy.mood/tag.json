@@ -1,0 +1,35 @@
+{
+  "id": "whimsy.mood",
+  "facet": "mood",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "playful.mood"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "dreamy.mood"
+    },
+    {
+      "type": "often-with",
+      "target": "glockenspiel.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "celesta.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "music-box.keys"
+    },
+    {
+      "type": "often-with",
+      "target": "harp.strings"
+    },
+    {
+      "type": "often-with",
+      "target": "wonder.mood"
+    }
+  ]
+}

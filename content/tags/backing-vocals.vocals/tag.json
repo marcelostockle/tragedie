@@ -1,0 +1,23 @@
+{
+  "id": "backing-vocals.vocals",
+  "facet": "vocals",
+  "examples": [],
+  "related": [
+    {
+      "type": "not-to-be-confused-with",
+      "target": "vocal-harmonies.vocals"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "choir.vocals"
+    },
+    {
+      "type": "not-to-be-confused-with",
+      "target": "duet.vocals"
+    },
+    {
+      "type": "often-with",
+      "target": "vocal-call-and-response.form"
+    }
+  ]
+}
